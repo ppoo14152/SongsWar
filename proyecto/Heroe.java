@@ -17,10 +17,11 @@ public class Heroe extends Actor
     private int a=0;
     private int b=0;
     private int c=0;
+    private int Atk;
     public void Heroes()
     {
           comando=0;
-       
+          
     }
         
         
@@ -29,7 +30,7 @@ public class Heroe extends Actor
         // Agrega tus códigos de acción aquí.
         
     }  
-  
+    
     public int setCom()
     { 
         //Comando ataque qer

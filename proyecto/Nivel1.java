@@ -20,10 +20,16 @@ private int D;
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
         super(990, 657, 1); 
         Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
-        Heroe es=new Espadachin();
+        Espadachin es=new Espadachin();
         Heroe cab=new Caballero();
+        Muro p=new Pared(100,A);
+       
+        A= es.getAtk();
+        System.out.print(A);
+        addObject(p,750,500);
         addObject(cab,200,500);
         addObject(es,250,500);
+        
         
     }
 
