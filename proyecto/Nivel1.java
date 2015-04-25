@@ -24,9 +24,9 @@ private int D;
         Heroe cab=new Caballero();
         Muro p=new Pared(100,A);
        
-        A= es.getAtk();
+        A=es.getAtk();
         System.out.print(A);
-        addObject(p,750,500);
+        addObject(p,550,500);
         addObject(cab,200,500);
         addObject(es,250,500);
         
