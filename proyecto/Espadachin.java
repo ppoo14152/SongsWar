@@ -40,9 +40,10 @@ public class Espadachin extends Heroe
        if(band==1){           
         band2=Ataque();
         getAtk();
-        getTouch();
+        super.getTouch();
+       
         
-        }
+    }
              
            
        if(band==2){
@@ -62,13 +63,7 @@ public class Espadachin extends Heroe
         
         return Ataque;
     }
-    public boolean getTouch()
-    {
-        if(isTouching(Muro.class))
-        return true;
-        else
-        return false;
-    }
+    
     public int Ataque()
     {  
         int x=getX();
