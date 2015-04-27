@@ -31,6 +31,7 @@ public class Heroe extends Actor
         
     }  
     
+    
     public int setCom()
     { 
         //Comando ataque qer

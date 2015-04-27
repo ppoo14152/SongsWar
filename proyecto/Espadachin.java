@@ -35,10 +35,12 @@ public class Espadachin extends Heroe
         // Agrega tus códigos de acción aquí.
         int i=0,x=0;
        band=super.setCom();
+       
       
        if(band==1){           
         band2=Ataque();
         getAtk();
+        getTouch();
         
         }
              
@@ -59,6 +61,13 @@ public class Espadachin extends Heroe
     {
         
         return Ataque;
+    }
+    public boolean getTouch()
+    {
+        if(isTouching(Muro.class))
+        return true;
+        else
+        return false;
     }
     public int Ataque()
     {  
