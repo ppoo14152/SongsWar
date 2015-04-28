@@ -13,6 +13,7 @@ public class Inicio extends Boton
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
       World w=getWorld();
+      
     public void act() 
     { 
        if(Greenfoot.mouseClicked(this))
