@@ -18,16 +18,18 @@ public class Heroe extends Actor
     private int b=0;
     private int c=0;
     private int Atk;
+    private Comando imgCom;
+    private World w;
     public void Heroes()
     {
           comando=0;
-          
+          imgCom=new Comando();
     }
         
         
     public void act() 
     {
-        // Agrega tus códigos de acción aquí.
+       
         
     }  
     
