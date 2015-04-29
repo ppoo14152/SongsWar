@@ -18,51 +18,42 @@ public class Comando extends Actor
    private GreenfootImage Ataque1;
    private GreenfootImage Ataque2;
    private GreenfootImage Ataque3;
-   private LinkedList<GreenfootImage> img;
-   private Timer tm;
-   private Timer ts;
+   private LinkedList<GreenfootImage> imgRep;
+   private LinkedList<GreenfootImage> imgAtk;
+   
    private int count;
    private long seg;
+   private int i;
     public Comando ()
     {
-      img=new LinkedList<GreenfootImage> ();
+      imgRep=new LinkedList<GreenfootImage> ();
+      imgAtk=new LinkedList<GreenfootImage> ();
       
-      img.add(Reposo1=new GreenfootImage("Reposo01.png"));
-      img.add(Reposo2=new GreenfootImage("Reposo02.png"));
-      img.add(Reposo3=new GreenfootImage("Reposo03.png"));
-      //img.add(Ataque1=new GreenfootImage("ComAtk01.png"));
-      //img.add(Ataque2=new GreenfootImage("ComAtk02.png"));
-      //img.add(Ataque3=new GreenfootImage("ComAtk03.png"));
-      //seg=System.currentTimeMillis();
-     
+      imgRep.add(Reposo1=new GreenfootImage("Reposo01.png"));
+      imgAtk.add(Ataque1=new GreenfootImage("ComAtk01.png"));
+      imgAtk.add(Ataque2=new GreenfootImage("ComAtk02.png"));
+      imgAtk.add(Ataque3=new GreenfootImage("ComAtk03.png"));
+      seg=System.currentTimeMillis();
+      i=0;
       count=0;
     }
     public void act() 
     {
-     if(System.currentTimeMillis()-seg>500){
-         seg=System.currentTimeMillis();
-      count++;
-       setImage(img.get(count));
+        
+     if(seg>1){
+       seg=System.currentTimeMillis();
+      
        
+       ///setImage(imgRep.get(0));
+       setRotation(i);
+       i=i+15;
         }
         if(count==2)
         count=0;
         
     }
     
-    public void run()
-    {
-        count=count+1;
-                 switch(count)
-                 {
-                     case 0:setImage(Reposo1);
-                     case 1:setImage(Reposo2);
-                     case 2:setImage(Reposo3);
-                     case 3:setImage(Reposo1);
-             }
-             if(count==3)
-             count=0;
-            }
+    
             
     
 }
