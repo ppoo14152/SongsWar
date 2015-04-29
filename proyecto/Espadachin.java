@@ -19,7 +19,7 @@ public class Espadachin extends Heroe
     private GreenfootImage Def01;
     public Espadachin()
     {
-        Ataque=100;
+        Ataque=20;
         DañoRes=0;
         Def=100;
         band=0;
@@ -39,7 +39,7 @@ public class Espadachin extends Heroe
       
        if(band==1){           
         band2=Ataque();
-        getAtk();
+        
         super.getTouch();
        
         

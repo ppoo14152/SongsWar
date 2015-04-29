@@ -23,9 +23,9 @@ public boolean B;
 
         Espadachin es=new Espadachin();
         Heroe cab=new Caballero();
-        Muro p=new Pared(100,A);
+        Muro p=new Pared(100,0);
         
-        A=es.getAtk();
+       
         System.out.print(A);
         addObject(p,550,500);
         addObject(cab,200,500);

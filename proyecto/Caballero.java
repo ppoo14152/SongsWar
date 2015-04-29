@@ -14,7 +14,7 @@ public class Caballero extends Heroe
     private int band;
     public Caballero()
     {
-        Ataque=0;
+        Ataque=35;
         DañoRes=0;
         Def=100;
         band=0;
@@ -59,6 +59,11 @@ public class Caballero extends Heroe
               
         
         
+    }
+    public int getAtk()
+    {
+        
+        return Ataque;
     }
     public void Regreso()
     {       
