@@ -20,10 +20,15 @@ public class Heroe extends Actor
     private int Atk;
     private Comando imgCom;
     private World w;
+    private String Regreso;
+    private Scanner entrada;
+    
     public void Heroes()
     {
           comando=0;
+          entrada=new Scanner(System.in);
           imgCom=new Comando();
+          
     }
         
         
@@ -37,6 +42,7 @@ public class Heroe extends Actor
     public int setCom()
     { 
         //Comando ataque qer
+        String r;
         if(Greenfoot.isKeyDown("q"))
         a=1;
         if(a==1){
@@ -46,14 +52,18 @@ public class Heroe extends Actor
                 c=1;
                 if(c==1){
                 if(Greenfoot.isKeyDown("r"))
+
                 comando=1;
                  a=0;
                  b=0;
-                 c=0;}}                
-         else if(Greenfoot.isKeyDown("j"))
-                  comando=2;
+                 c=0;
+                
+            }}                
+         else if(Greenfoot.isKeyDown("j")){
+              comando=2;
+             }
            
-            if(Greenfoot.isKeyDown("space"))
+            if(!Greenfoot.isKeyDown("r"))
             comando=3;
         
        return comando;
