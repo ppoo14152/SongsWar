@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.*;
 /**
  * Escribe una descrición de la clase Espadachin aquí.
  * 
@@ -14,12 +14,13 @@ public class Espadachin extends Heroe
     private int band;
     private int band2;
     private int i;
+    private LinkedList<GreenfootImage> HAtk;
     private GreenfootImage Atk01;
     private GreenfootImage Atk02;
     private GreenfootImage Atk03;
     private GreenfootImage Def01;
     private long seg;
-    private String regreso;
+    
     
     public Espadachin()
     {
@@ -29,13 +30,14 @@ public class Espadachin extends Heroe
         band=0;
         band2=0;
         i=0;
-        Atk01=new GreenfootImage("Atack01.png");
-        Atk02=new GreenfootImage("Atack02.png");
-        Atk03=new GreenfootImage("Atack03.png");
+        HAtk=new LinkedList<GreenfootImage>();
+        HAtk.add(Atk01=new GreenfootImage("Atack01.png"));
+        HAtk.add( Atk02=new GreenfootImage("Atack02.png"));
+        HAtk.add(Atk03=new GreenfootImage("Atack03.png"));
         Def01=new GreenfootImage("Def01.png");
         seg=System.currentTimeMillis();
         
-        regreso=" " ;
+        
     }
    public void act() 
     {
@@ -44,21 +46,19 @@ public class Espadachin extends Heroe
        band=super.setCom();
        
       
-       if(band==1){  
+       if(comando==1){  
          
         band2=Ataque();
-        super.getTouch(); 
-        
-        
-        
-    }
-             
+        super.getTouch();}
+         if(band2==1){
+         Reg=true;
+         band2=0;}
            
-       if(band==2){
+       if(comando==2){
             Def();
       }
-      if(band==3){
-       
+      if(comando==3){
+      
         Regreso();
        }
         
@@ -70,31 +70,31 @@ public class Espadachin extends Heroe
     }
     public int getAtk()
     {
-        
         return Ataque;
     }
     
     public int Ataque()
     {  
         int x=getX();
-        int x2=0;
-        int mod;
        // System.out.println(x);
         //Greenfoot.delay(20);
-             if(x<500){
-                 mod=x;
-                 mod=mod%2;
-                 if(mod==0)
-                            setImage(Atk01);
-                  else
-                            setImage(Atk02);
-                            
-                            move(50);
-                            
+             if(seg>1 && x<450){
+                 seg=System.currentTimeMillis();
+                 
+                 
+                 setImage(HAtk.get(i));
+                 move(20);
+                 
+                 setImage(HAtk.get(i));
+                  move(20);
+                        i++;
+                        if(i==2)
+                            i=0;
+                            x++;
                         }
                             else
                             {
-                            setImage(Atk03);
+                            setImage(HAtk.get(2));
                             move(0);
                              band2=1;                 
                             }
@@ -103,33 +103,13 @@ public class Espadachin extends Heroe
        
         
     }
-    public int Ataque2()
-    {
-        switch(i)
-        {
-            case 10: setImage(Atk01);
-            break;
-            case 20: setImage(Atk02);
-            break;
-            case 0:setImage(Atk03);
-            band=3;
-            break;
-           }
-           move(50);
-           
-           i++;
-           if(i==50)
-           {
-               i=0;
-            }
-            return band2;
-    }
+    
     public void Def()
     {
         setImage(Def01);
     }
     public void Regreso()
-    {   int x=getX();
+    {   
        
        setLocation(250,500);
         setImage(Atk01);

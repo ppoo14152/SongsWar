@@ -23,10 +23,12 @@ public class Comando extends Actor
    private LinkedList<GreenfootImage> imgRep;
    private LinkedList<GreenfootImage> imgAtk;
    private Heroe comHeroe;
-   private int comando;
+   protected int comando;
+   private int com;
    private int count;
    private long seg;
    private int i;
+   private boolean Reg;
    private SimpleTimer tiempo;
     public Comando ()
     {
@@ -48,6 +50,7 @@ public class Comando extends Actor
       comando=0;
       seg=System.currentTimeMillis();
       i=0;
+      Reg=true;
       count=0;
       tiempo=new SimpleTimer();
     }
@@ -55,8 +58,8 @@ public class Comando extends Actor
     {
        
      comando=comHeroe.setCom();
-     
-     if(comando==1)
+    
+     if(comando==1 && comHeroe.band==1)
      {
          if(seg>1){
             seg=System.currentTimeMillis();
@@ -65,7 +68,7 @@ public class Comando extends Actor
                  if(i==2)
                  i=0;
      }
-     else if(comando==0 || comando==3){
+     else if(comando==3 || comando==0){
      if(seg>1){
        seg=System.currentTimeMillis();       
        setImage(imgRep.get(count));
@@ -74,6 +77,7 @@ public class Comando extends Actor
         if(count==3)
         count=0;
     }
+    comando=0;
 }
     
     

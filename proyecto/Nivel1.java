@@ -21,12 +21,12 @@ public boolean B;
         super(990, 657, 1); 
         //Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
 
-        Espadachin es=new Espadachin();
+        Heroe es=new Espadachin();
         Heroe cab=new Caballero();
-        Muro p=new Pared(100,0);
+        Muro p=new Pared();
         Comando com=new Comando();
-        Vida v=new Vida(90);
-        addObject(v,10,10);
+        
+        
         addObject(com,550,100);
         addObject(p,550,500);
         addObject(cab,200,500);
@@ -34,7 +34,10 @@ public boolean B;
         
         
     }
-    
+    public void Remueve(Actor a)
+    {
+        removeObject(a);
+    }
     
        
 

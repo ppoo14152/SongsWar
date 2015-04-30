@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.*;
 /**
  * Escribe una descrición de la clase Caballero aquí.
  * 
@@ -12,57 +12,82 @@ public class Caballero extends Heroe
     private int DañoRes;
     private int Def;
     private int band;
+    private int band2;
+    
+    private long seg;
+    private int j;
+    private LinkedList<GreenfootImage> HCab;
+    private GreenfootImage CabAtk01;
+    private GreenfootImage CabAtk02;
+    private GreenfootImage CabAtk03;
     public Caballero()
     {
         Ataque=35;
         DañoRes=0;
         Def=100;
         band=0;
+        band2=0;
+        j=0;
+        HCab=new LinkedList<GreenfootImage>();
+        HCab.add(CabAtk01=new GreenfootImage("CabAtack01.png"));
+        HCab.add(CabAtk02=new GreenfootImage("CabAtack02.png"));
+        HCab.add(CabAtk03=new GreenfootImage("CabAtack03.png"));
+       // Def01=new GreenfootImage("Def01.png");
+        seg=System.currentTimeMillis();
     }
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
-        int i=0,x=0;
+        
        band=super.setCom();
-      if(band==1){           
-        Ataque(); 
-        comando=0;}
-        if(band==2){
-            Def();
-        comando=0;}
-       if(band==3){
+       
+      if(comando==1){           
+        band2=Ataque(); }
+        //super.getTouch();}}
+        if(band2==1){
+            Reg=true;
+         band2=0;}
+         
+       if(comando==2){
+            Def();}
+       if(comando==3){
        Regreso();
-       comando=0;}
+       }
     }    
-     public void Ataque()
+     public int Ataque()
     {  
-        int x=getX();
-        int mod;
+        int x2=getX();
+        
        // System.out.println(x);
         //Greenfoot.delay(20);
-             if(x<550){
-                 mod=x;
-                 mod=mod%2;
-                 if(mod==0)
-                            setImage("CabAtack01.png");
-                  else
-                            setImage("CabAtack02.png");
-                            
-                            move(80);  
+             if(seg>1 &&  x2<450){
+                seg=System.currentTimeMillis();
+                 
+                 setImage(HCab.get(j));
+                   move(22);
+                 
+                 setImage(HCab.get(j));
+                  move(22);
+                        j++;
+                        if(j==2)
+                            j=0;
+                            x2++;
                         }
                             else
                             {
-                            setImage("CabAtack03.png");
-                            
+                            setImage(HCab.get(2));
+                            //move(0);
+                             band2=1;                 
                             }
                             
+              return band2;
+                 
               
         
         
     }
     public int getAtk()
     {
-        
         return Ataque;
     }
     public void Regreso()
