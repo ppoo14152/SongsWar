@@ -41,16 +41,16 @@ public class Caballero extends Heroe
         
        band=super.setCom();
        
-      if(comando==1){           
+      if(super.getComando()==1){           
         band2=Ataque(); }
         //super.getTouch();}}
         if(band2==1){
-            Reg=true;
+            super.setReg(true);
          band2=0;}
          
-       if(comando==2){
+       if(super.getComando()==2){
             Def();}
-       if(comando==3){
+       if(super.getComando()==3){
        Regreso();
        }
     }    

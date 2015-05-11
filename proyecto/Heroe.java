@@ -9,26 +9,19 @@ import java.util.Scanner;
  */
 public class Heroe extends Actor 
 {
-    /**
-     * Act - hace lo que Heroes quiere hacer. Este método se llama "cuando quiera" o whenever
-     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
-     */
-    public int comando;
+    private int comando;
     private int a=0;
     private int b=0;
     private int c=0;
     private int Atk;
     private Comando imgCom;
-    private World w;
-    private String Regreso;
-    private Scanner entrada;
-    public boolean Reg;
-    public int band;
+    private World w;    
+    private boolean Reg;
+    private int band;
     
     public void Heroes()
-    {
+    { 
           comando=0;
-          entrada=new Scanner(System.in);
           imgCom=new Comando();
           Reg=false;
     }
@@ -100,7 +93,18 @@ public class Heroe extends Actor
     {
         return Reg;
     }
-    
+    public void setReg(boolean R)
+    {
+        Reg=R;
+    }
+    public int getBand()
+    {
+        return band;
+    }
+    public int getComando()
+    {
+        return comando;
+    }
    
    
 }

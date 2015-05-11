@@ -59,7 +59,7 @@ public class Comando extends Actor
        
      comando=comHeroe.setCom();
     
-     if(comando==1 && comHeroe.band==1)
+     if(comando==1 && comHeroe.getBand()==1)
      {
          if(seg>1){
             seg=System.currentTimeMillis();

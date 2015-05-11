@@ -24,6 +24,7 @@ public boolean B;
         Heroe es=new Espadachin();
         Heroe cab=new Caballero();
         Muro p=new Pared();
+        Enemigo enem=new Coloso();
         Comando com=new Comando();
         
         
@@ -31,6 +32,7 @@ public boolean B;
         addObject(p,550,500);
         addObject(cab,200,500);
         addObject(es,250,500);
+        addObject(enem,750,500);
         
         
     }
