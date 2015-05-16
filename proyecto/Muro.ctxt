@@ -2,5 +2,11 @@
 comment0.params=
 comment0.target=void\ act()
 comment1.params=
-comment1.target=int\ getBand()
-numComments=2
+comment1.target=Muro()
+comment2.params=
+comment2.target=int\ restaSalud()
+comment3.params=Dano
+comment3.target=void\ setDano(int)
+comment4.params=R
+comment4.target=void\ setRes(int)
+numComments=5

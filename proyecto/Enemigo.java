@@ -8,12 +8,41 @@ import greenfoot.*;
  */
 public class Enemigo extends Actor
 {
-    /**
-     * Act - hace lo que Enemigo quiere hacer. Este método se llama "cuando quiera" o whenever
-     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
-     */
+    private Actor heroAtk;
+    private int DanoEs;
+    private int DanoCab;
+    private int DanoTotal;
+    private int Resistencia;
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
     }    
+    public Enemigo()
+    {
+        heroAtk=new Heroe();
+        DanoEs=0;
+        DanoCab=0;
+        DanoTotal=0;
+        Resistencia=0;
+    }
+    public int restaSalud(int Resistencia)
+    {
+        String NombreClass;
+        heroAtk=getOneIntersectingObject(Heroe.class);
+        NombreClass=heroAtk.getClass().getName();
+        if(NombreClass== "Espadachin"){
+            DanoEs=((Espadachin)heroAtk).getAtk();
+            
+        }
+        else if(NombreClass=="Caballero"){
+            DanoCab=((Caballero)heroAtk).getAtk();
+        }
+        DanoTotal=Resistencia-(DanoEs+DanoCab);        
+        
+        return DanoTotal;
+    }
+    public void setResistencia(int Res)
+    {
+        Resistencia=Res;
+    }
 }

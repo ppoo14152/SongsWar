@@ -29,7 +29,7 @@ public class Comando extends Actor
    private long seg;
    private int i;
    private boolean Reg;
-   private SimpleTimer tiempo;
+
     public Comando ()
     {
       
@@ -52,7 +52,7 @@ public class Comando extends Actor
       i=0;
       Reg=true;
       count=0;
-      tiempo=new SimpleTimer();
+
     }
     public void act() 
     {

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Puntos()
+comment0.text=\r\n\ Act\ -\ hace\ lo\ que\ Puntos\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=p
+comment2.target=void\ setPuntos(int)
+comment3.params=t
+comment3.target=java.lang.String\ toString(int)
+comment4.params=
+comment4.target=int\ getPuntos()
+numComments=5

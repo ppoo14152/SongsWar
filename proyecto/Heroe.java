@@ -15,15 +15,25 @@ public class Heroe extends Actor
     private int c=0;
     private int Atk;
     private Comando imgCom;
-    private World w;    
+    private World w;
+    private Actor eneAtk;
+    private int DanoCol;
+    private int DanoKra;
+    private int DanoTotal;
     private boolean Reg;
     private int band;
+    private int Resistencia;
     
     public void Heroes()
     { 
           comando=0;
           imgCom=new Comando();
           Reg=false;
+          eneAtk=new Enemigo();
+          DanoCol=0;
+          DanoKra=0;
+          DanoTotal=0;
+          Resistencia=0;
     }
         
         
@@ -82,6 +92,23 @@ public class Heroe extends Actor
        return band;
         
     }
+    public int restaSalud(int Resistencia)
+    {
+        String NombreClass;
+        eneAtk=getOneIntersectingObject(Enemigo.class);
+        NombreClass=eneAtk.getClass().getName();
+        if(NombreClass== "Coloso"){
+            DanoCol=((Coloso)eneAtk).getAtk();
+            
+        }
+        if(NombreClass=="Kraken"){
+           DanoKra=((Kraken)eneAtk).getAtk();
+        }
+        
+        DanoTotal=Resistencia-(DanoCol-DanoKra);        
+        System.out.println(DanoTotal);
+        return DanoTotal;
+    }
     public boolean getTouch()
     {
         if(this.isTouching(Muro.class))
@@ -105,6 +132,9 @@ public class Heroe extends Actor
     {
         return comando;
     }
-   
+   public void setDano(int d)
+   {
+       DanoTotal=d;
+    }
    
 }

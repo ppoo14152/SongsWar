@@ -9,13 +9,16 @@ import java.util.*;
 public class Caballero extends Heroe
 {
     private int Ataque;
-    private int DañoRes;
     private int Def;
     private int band;
     private int band2;
-    
+    private int band3;
     private long seg;
     private int j;
+    private int DanoRes;
+    private boolean Desaparece;
+    private Vida v;
+    private World w;
     private LinkedList<GreenfootImage> HCab;
     private GreenfootImage CabAtk01;
     private GreenfootImage CabAtk02;
@@ -23,10 +26,12 @@ public class Caballero extends Heroe
     public Caballero()
     {
         Ataque=35;
-        DañoRes=0;
-        Def=100;
+        DanoRes=0;
+        Def=50;
         band=0;
         band2=0;
+        band3=0;
+        v=new Vida(800);
         j=0;
         HCab=new LinkedList<GreenfootImage>();
         HCab.add(CabAtk01=new GreenfootImage("CabAtack01.png"));
@@ -38,21 +43,35 @@ public class Caballero extends Heroe
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
-        
+        w=getWorld();
        band=super.setCom();
        
       if(super.getComando()==1){           
-        band2=Ataque(); }
+        band2=Ataque(); 
+        band3=0;}
         //super.getTouch();}}
         if(band2==1){
             super.setReg(true);
          band2=0;}
          
        if(super.getComando()==2){
-            Def();}
+           band3=1; 
+           Def();}
        if(super.getComando()==3){
        Regreso();
        }
+       if(this.isTouching(Enemigo.class) && band3!=1){
+        DanoRes=super.restaSalud(Def);
+        Desaparece=v.reduce(DanoRes,v.getImage(),2);
+        super.setDano(0);
+        //System.out.println(DanoRes);
+        }
+        if(Desaparece==false)
+        w.addObject(v,100,70);
+        else if(Desaparece==true){
+            w.removeObject(v);
+            w.removeObject(this);
+        } 
     }    
      public int Ataque()
     {  

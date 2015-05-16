@@ -23,6 +23,10 @@ public class Nivel3 extends World
         Muro p=new Pared();
         Comando com=new Comando();
         
+        showText("Ataque",50,50);
+        showText("Q-E-R",50,70);
+        showText("Defensa",50,100);
+        showText("W-E-Q",50,120);
         
         addObject(com,550,100);
         addObject(p,550,500);

@@ -8,9 +8,7 @@ import greenfoot.*;
  */
 public class Nivel1 extends World
 {
-private int A;
-private int D;
-public boolean B;
+private GreenfootSound music;
     /**
      * Constructor para objetos de clase esenario.
      * 
@@ -18,16 +16,20 @@ public boolean B;
     public Nivel1()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
-        super(990, 657, 1); 
-        Greenfoot.playSound("sounds/Future_World_Music_Pulse_of_Life-Larger_Than_Life(www.mp3vip.org).mp3");
-
+        super(990, 660, 1); 
+        music=new GreenfootSound("sounds/Future_World_Music_Pulse_of_Life-Larger_Than_Life(www.mp3vip.org).mp3");
+        music.play();
         Heroe es=new Espadachin();
         Heroe cab=new Caballero();
         Muro p=new Pared();
         Enemigo enem=new Coloso();
         Comando com=new Comando();
-        
-        
+        Puntos punt=new Puntos();
+        showText("Ataque",50,50);
+        showText("Q-E-R",50,70);
+        showText("Defensa",50,100);
+        showText("W-E-Q",50,120);
+        addObject(punt,100,200);
         addObject(com,550,100);
         addObject(p,550,500);
         addObject(cab,200,500);
