@@ -2,10 +2,16 @@ import greenfoot.*;
 import java.util.*;
 
 /**
- * Escribe una descrición de la clase Coloso aquí.
- * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * Esta clase es el Enemigo del primer Nivel
+ * se declaran su Ataque
+ * defensa
+ * una serie de bandera booleanas para  ejecutar ciertas acciones
+ * vida la cual sirve para poder eliminar el enemigo
+ * Una lista para ejecutar la animacion del enemigo
+ * listas para saber que actores ya no exsisten en el mundo
+ * una variable de tiempo para poder animar al enemigo
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión Mayo 2015
  */
 public class Coloso extends Enemigo
 {
@@ -19,6 +25,7 @@ public class Coloso extends Enemigo
     private int Com;
     private World w;
     private World n;
+    private World g;
     private Vida v;
     private Heroe h;
     private Actor heroAtk;
@@ -27,7 +34,15 @@ public class Coloso extends Enemigo
     private GreenfootImage Coloso2;
     private GreenfootImage Coloso3;
     private List M;
+    private List H;
     private long seg;
+    private GreenfootSound SonidoAtk;
+   /**
+    * Es el constructor , en se declara todas las variables de intancia ya 
+    * mencionadas arriba
+    * se carga en las lista las imagenes y se definen los valores de 
+    * las demas variables
+    */
     public Coloso()
     {
         Atk=20;
@@ -45,25 +60,33 @@ public class Coloso extends Enemigo
         Enem.add(Coloso2=new GreenfootImage("Coloso02.png"));
         Enem.add(Coloso3=new GreenfootImage("Coloso03.png"));
         seg=System.currentTimeMillis();
-
+      
+         SonidoAtk= new GreenfootSound("golpear_7.mp3");
     }
+    
     public void act() 
     {
         w=getWorld();
-        n=new Nivel2();
+        
+        g=new GameOver();
         M=w.getObjects(Muro.class);
+        H=w.getObjects(Heroe.class);
+        n=new PantallaEspera(2);
         int bandR=h.setCom();
-       
+       if(H.isEmpty()){
+                Greenfoot.setWorld(g);}
         if(M.isEmpty()){
             if(Com==1 && band==false)
                 Ataque();
             
              if(this.isTouching(Heroe.class)){
+                 SonidoAtk.play();
                  if( bandR==1){
                 Dano=super.restaSalud(Defensa);
                 Desaparece=v.reduce(Dano,v.getImage(),1);
             }
-            
+            if(!this.isTouching(Heroe.class))
+            SonidoAtk.stop();
                 }
                 if(Desaparece==false)
                 w.addObject(v,500,600);
@@ -71,7 +94,8 @@ public class Coloso extends Enemigo
                  w.removeObject(v);
                  w.removeObject(this);
                  
-                 Greenfoot.setWorld(n);}
+                 Greenfoot.setWorld(n);
+                }
             if(band==true && Desaparece==false){
                 Regreso();
                 Com=0;                
@@ -79,9 +103,17 @@ public class Coloso extends Enemigo
             int Band2=Greenfoot.getRandomNumber(50);
             if(Band2==1 || Band2==25)
                 Com=1;
+                
            
     }}    
-
+/**
+ * Este metodo sirve para que  el enimgo pueda atacar 
+ * este enemigo usa animacionn al atacar 
+ * utiliza un indice el cual ira cambiando las imagenes que estan guardadas
+ * en la lista para animar 
+ * y utila un move para poder moverse
+ * regresa una bandera para que el enemigo pueda regreasar a su posicion original
+ */
     public void Ataque()
     {
         int x=getX();
@@ -98,6 +130,9 @@ public class Coloso extends Enemigo
         if(x==150)
             band=true; 
     }
+    /**
+     * Este metodo pone en la posicion original a este enemigo
+     */
 
     public void Regreso()
     {
@@ -115,6 +150,9 @@ public class Coloso extends Enemigo
             band=false;
         }
     }
+    /**
+     * este metodo regresa el ataque de este Enemigo
+     */
     public int getAtk()
     {
         return Atk;

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Dragon()
+comment0.text=\r\n\ Constructor\ Dragon\ en\ el\ se\ definen\ el\ ataque\ la\ defensa\ y\ se\ \r\n\ cargan\ en\ las\ listas\ las\ imagenes\ que\ serviran\ para\ la\ animacion\r\n\ se\ coloca\ la\ vida\ \r\n\ y\ se\ usa\ un\ sonido\ que\ se\ escuchar\ cuando\ se\ toque\ con\ otro\ acctor\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=boolean\ Ataque()
+comment2.text=\r\n\ Este\ metodo\ selecciona\ el\ tipo\ de\ ataque\ que\ este\ enemigo\ \r\n\ ejecutara\ por\ medio\ de\ un\ numero\ aleatorio\r\n\ regresa\ una\ bandera\ que\ el\ enemigo\ usara\ para\ saber\ si\ esta\ tocando\ una\ flecha\ o\ no\ \r\n\ \r\n
+comment3.params=
+comment3.target=boolean\ AtaqueLlama()
+comment3.text=\r\n\ Este\ metodo\ se\ ejecutara\ segun\ lo\ seleccione\ el\ metodo\ "Ataque"\ ,\ este\ metodo\r\n\ a\u00F1anadira\ un\ objeto\ llama\ ,\ y\ movera\ al\ enemigo.\r\n\ cuando\ la\ x\ tenga\ cierto\ \ valor\ se\ eliminara\ la\ llama\ del\ mundo\r\n\ regresara\ una\ bandera\ para\ que\ el\ enemigo\ pudea\ ajustar\ su\ posicion\ en\ el\ mundo\ \r\n
+comment4.params=
+comment4.target=boolean\ AtaqueGarra()
+comment4.text=\r\n\ Este\ metodo\ a\u00F1anadira\ un\ objeto\ Garra\ la\ cual\ la\ colocara\ y\ la\ movera\ para\ alcanzar\ a\ los\ heroes\ \r\n\ segun\ el\ numeero\ de\ x\ ,\ se\ removera\ del\ mundo\ este\ objeto\r\n\ regresara\ una\ bandera\ para\ que\ el\ enemigo\ pueda\ ajustar\ su\ posicion\r\n
+comment5.params=
+comment5.target=int\ getAtk()
+comment5.text=\r\n\ regresa\ el\ ataque\ de\ este\ enemigo\r\n
+numComments=6

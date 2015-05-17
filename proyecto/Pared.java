@@ -2,10 +2,12 @@ import greenfoot.*;
 import java.awt.*;
 
 /**
- * Escribe una descrición de la clase Pared aquí.
+ * Estaa clase es un Muro , tienen variables de instancia 
+ * las cuales son ataque, resistencia ,defensa y vida
+ * ademas de una serie de banderas booleanas para poder ejecutar una serie de acciones
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión Abril 2015
  */
 public class Pared extends Muro
 {
@@ -14,21 +16,18 @@ public class Pared extends Muro
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
     private int Resistencia;
-    
+
     private Vida V;
     private int Dano;
-    
-    private boolean NivelNew;
+
     private boolean Vit;
     private Actor heroAtk;
     private boolean Desaparece;
-    
-   
+
     public void act()
     {        World w=getWorld();
-              
-        
-         if(Resistencia>99)
+
+        if(Resistencia>99)
             w.addObject(V,500,550); 
         if(this.isTouching(Heroe.class)){   
             super.setRes(100);
@@ -38,15 +37,17 @@ public class Pared extends Muro
             if(Desaparece==false)
                 w.addObject(V,500,600);
             else if(Desaparece==true) {
-                 w.removeObject(V);
+                w.removeObject(V);
                 w.removeObject(this);
-                
-               
-            }
-                                         
-          }
-   }
 
+            }
+        }
+    }
+
+    /**
+     * Constructor de Pared, en el se definen las variables 
+     * de  instancia, como la resistencia la vida y el daño
+     */
     public Pared ()
     {
         Resistencia=100; 
@@ -54,8 +55,7 @@ public class Pared extends Muro
         heroAtk=new Heroe();
         V=new Vida(1000);
         Desaparece=false;
-        NivelNew=false;
-    }
 
+    }
 
 }

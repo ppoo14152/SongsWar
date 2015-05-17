@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Espadachin()
+comment0.text=\r\n\ Constructor\ de\ Espadachin\ \r\n\ aqui\ se\ definen\ las\ variables\ como\ las\ lista\ y\ se\ cargan\ sus\ respectivas\r\n\ imagenes\ \r\n\ ademas\ de\ definir\ el\ ataque\ la\ defensa\ y\ la\ serie\ de\ banderas\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=int\ getAtk()
+comment2.text=\r\n\ regresa\ el\ ataque\ de\ este\ heroe\r\n
 comment3.params=
 comment3.target=int\ Ataque()
+comment3.text=\r\n\ este\ metodo\ sirve\ para\ poder\ ejecutar\ la\ animacion\ de\ ataque\ y\ ademas\ causarle\ da\u00F1o\r\n\ al\ enemigo\r\n\ usa\ las\ listas\ y\ un\ indice\ \r\n\ para\ poder\ ir\ cambiando\ las\ imagenes\r\n\ ademas\ de\ regresar\ una\ bandera\ para\ poder\ regresar\ al\ heroe\ a\ sus\ estado\ original\r\n
 comment4.params=
 comment4.target=void\ Def()
+comment4.text=\r\n\ coloca\ la\ imagen\ para\ la\ defensa\r\n
 comment5.params=
 comment5.target=void\ Regreso()
+comment5.text=\r\n\ este\ metodo\ regresa\ al\ heroe\ a\ su\ posicion\ original\r\n
 numComments=6

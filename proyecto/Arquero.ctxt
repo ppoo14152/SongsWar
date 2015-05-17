@@ -1,5 +1,13 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ hace\ lo\ que\ Arquero\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n
-numComments=1
+comment0.target=Arquero()
+comment0.text=\r\n\ Constructor\ de\ Arquero\ \r\n\ aqui\ se\ definen\ las\ varibles\ de\ instancia\ \r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=int\ getAtk()
+comment2.text=\r\n\ \r\nregresa\ el\ ataque\r\n
+comment3.params=
+comment3.target=void\ Def()
+comment3.text=\r\n\ se\ coloca\ la\ defensa\ del\ arquero\r\n
+numComments=4

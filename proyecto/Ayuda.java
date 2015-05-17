@@ -1,8 +1,8 @@
 import greenfoot.*;
 
 /**
- * Escribe una descrición de la clase Ayuda aquí.
- * 
+ *Esta clase sirve para poder ir a la pantalla de ayuda 
+ *para poder consultar informacion acerca del juego 
  * @autor (tu nombre) 
  * @versión (Un número de versión o una fecha)
  */

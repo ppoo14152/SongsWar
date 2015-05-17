@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Kraken()
+comment0.text=\r\n\ Este\ es\ el\ Constructor\ del\ Enemigo,\ en\ el\ se\ definira\ \ las\ variables\ de\ instancia\ y\ \r\n\ cargaran\ en\ la\ s\ listas\ ,las\ imagenes\ para\ la\ \ animacion\ del\ enemigo\ \r\n\ se\ define\ el\ sonido\ para\ cuando\ el\ enemigo\ toca\ a\ un\ heroe\ y\ una\r\n\ variable\ de\ tiempo\ para\ poder\ animar\ al\ enemigo\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=boolean\ Ataque()
+comment2.text=\r\n\ Este\ metodo\ se\ utiliza\ para\ que\ el\ enemigo\ puedda\ atacar\ a\ los\ heroes\ \r\n\ en\ el\ se\ usa\ el\ metodo\ setImage\ para\ cambiar\ la\ imagen,por\ la\ de\ ataque\ y\r\n\ asi\ poder\ tocar\ a\ los\ heroes\ regresa\ una\ bandera\ para\ poder\ ponerse\ en\ estado\ de\ reposo\ \r\n
 comment3.params=
 comment3.target=int\ getAtk()
+comment3.text=\r\n\ regresa\ el\ ataque\ de\ este\ enemigo\ \r\n
 numComments=4

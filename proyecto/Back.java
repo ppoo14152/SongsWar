@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Escribe una descrición de la clase Back aquí.
+ * Esta clase sirve para regresar a la pantalla de titulo
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión Mayo 2015
  */
 public class Back extends Boton
 {

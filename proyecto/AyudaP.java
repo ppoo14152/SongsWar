@@ -1,21 +1,18 @@
 import greenfoot.*;
 
 /**
- * Escribe una descrición de la clase AyudaP aquí.
+ * Este mundo Muestra Informacion aserca de como jugar el juego
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión Mayo 2015 
  */
 public class AyudaP extends World
 {
-    /**
-     * Act - hace lo que AyudaP quiere hacer. Este método se llama "cuando quiera" o whenever
-     * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
-     */
+
     public AyudaP() 
     {super(850,600,1);
-                // Agrega tus códigos de acción aquí.
-           Boton B=new Back();
-           addObject(B,600,500);
+
+        Boton B=new Back();
+        addObject(B,600,500);
     }    
 }

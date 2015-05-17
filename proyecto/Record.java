@@ -1,14 +1,17 @@
 import greenfoot.UserInfo;
 /**
- * Escribe una descrición de la clase Record aquí.
+ * Esta clase guarda los puntos y los regresa en la clase scoreBoard
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor Omar Agustin Valadez Hernandes 
+ * @versión Mayo 2015
  */
 public class Record  
 {
     // instance variables - reemplace el ejemplo a continuación por uno propio
     private UserInfo jugador;
+   /**
+    * define las variables de instancia
+    */
     
     public Record() 
     { 
@@ -16,7 +19,9 @@ public class Record
           this.jugador = UserInfo.getMyInfo();
         }
     }
-    
+    /**
+     * guarda los puntos 
+     */
     public void guardaRecords(int puntos)
     {
          if((UserInfo.isStorageAvailable()) && (this.jugador != null) && ((puntos > this.jugador.getScore())) || (this.jugador.getInt(0))==0){ 

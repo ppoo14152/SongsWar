@@ -3,4 +3,5 @@ comment0.params=
 comment0.target=void\ act()
 comment1.params=
 comment1.target=Pared()
+comment1.text=\r\n\ Constructor\ de\ Pared,\ en\ el\ se\ definen\ las\ variables\ \r\n\ de\ \ instancia,\ como\ la\ resistencia\ la\ vida\ y\ el\ da\u00F1o\r\n
 numComments=2

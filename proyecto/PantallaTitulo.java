@@ -1,23 +1,28 @@
 import greenfoot.*;
 
 /**
- * Escribe una descrición de la clase Muro aquí.
+ *Este Mundo es la pantalla principal que se muestra al iniciar el proyeccto
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión 3.0 Mayo 2015
  */
 public class PantallaTitulo extends World
 {
 
     /**
      * Constructor para objetos de clase Muro.
-     * 
+     *GreenfootSound music se usa para reproducir la musica que se reproducira
+     *en el juego
      */
+    private GreenfootSound music;
     public PantallaTitulo()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
         super(960, 544, 1); 
-        //Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
+       //Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
+       music=new GreenfootSound("17 Starfleet.mp3");
+       music.play();
+       music.setVolume(15);
         titulo t=new titulo();
         Boton b=new Inicio();
         Boton a=new Ayuda();

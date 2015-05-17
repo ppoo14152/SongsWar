@@ -1,8 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Atalaya()
+comment0.text=\r\n\ Constructor\ de\ Atalaya\r\n\ aqui\ se\ define\ la\ resistencia\ y\ el\ da\u00F1o,\ tambien\r\n\ la\ vida\ y\ las\ inicializacion\ de\ las\ banderas\ \r\n
 comment1.params=
 comment1.target=void\ act()
-comment2.params=
-comment2.target=void\ Ataque()
-numComments=3
+numComments=2

@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Coloso()
+comment0.text=\r\n\ Es\ el\ constructor\ ,\ en\ se\ declara\ todas\ las\ variables\ de\ intancia\ ya\ \r\n\ mencionadas\ arriba\r\n\ se\ carga\ en\ las\ lista\ las\ imagenes\ y\ se\ definen\ los\ valores\ de\ \r\n\ las\ demas\ variables\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ Ataque()
+comment2.text=\r\n\ Este\ metodo\ sirve\ para\ que\ \ el\ enimgo\ pueda\ atacar\ \r\n\ este\ enemigo\ usa\ animacionn\ al\ atacar\ \r\n\ utiliza\ un\ indice\ el\ cual\ ira\ cambiando\ las\ imagenes\ que\ estan\ guardadas\r\n\ en\ la\ lista\ para\ animar\ \r\n\ y\ utila\ un\ move\ para\ poder\ moverse\r\n\ regresa\ una\ bandera\ para\ que\ el\ enemigo\ pueda\ regreasar\ a\ su\ posicion\ original\r\n
 comment3.params=
 comment3.target=void\ Regreso()
+comment3.text=\r\n\ Este\ metodo\ pone\ en\ la\ posicion\ original\ a\ este\ enemigo\r\n
 comment4.params=
 comment4.target=int\ getAtk()
+comment4.text=\r\n\ este\ metodo\ regresa\ el\ ataque\ de\ este\ Enemigo\r\n
 numComments=5

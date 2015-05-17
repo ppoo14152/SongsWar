@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Escribe una descrición de la clase Recods aquí.
- * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * Esta clase sirve para poder revisar las puntuaciones del jugador
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión Mayo 2015
  */
 public class Recods extends Boton
 {
@@ -14,24 +13,23 @@ public class Recods extends Boton
      */
     public void act() 
     {
-       World w=getWorld();
-      
-       
-       if(Greenfoot.mouseClicked(this))
-       {
-           w=new puntaje();
-           Greenfoot.setWorld(w);
-       
-       }
+        World w=getWorld();
+
+        if(Greenfoot.mouseClicked(this))
+        {
+            w=new puntaje();
+            Greenfoot.setWorld(w);
+
+        }
         if(Greenfoot.mouseMoved(this))
         {
             setImage("botonR2.png");
         }
         else if(Greenfoot.mouseMoved(w))
-       {
+        {
             setImage("botonR.png");
-       }
-      
+        }
+
     }  
-    }    
+}    
 
