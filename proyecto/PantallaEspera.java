@@ -19,7 +19,7 @@ public class PantallaEspera extends World
     public PantallaEspera(int Nivel)
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
-        super(600, 400, 1);
+        super(800, 600, 1);
         continuar=new Continuar(Nivel);
         showText("Da click para continuar",300,100);
         addObject(continuar,300,200);

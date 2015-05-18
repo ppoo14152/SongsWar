@@ -18,7 +18,7 @@ public class Nivel2 extends World
     private GreenfootSound music;
     public Nivel2()
     {    
-        super(990, 660, 1); 
+        super(800, 600, 1); 
 
         Heroe es=new Espadachin();
         Heroe cab=new Caballero();

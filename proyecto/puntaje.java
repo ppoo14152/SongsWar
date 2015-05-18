@@ -20,7 +20,7 @@ public class puntaje extends World
     public puntaje()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
-        super(1280, 720, 1); 
+        super(800, 600, 1); 
         ScoreBoard sp=new ScoreBoard(500,300);
         back=new Back();
         addObject(back,600,600);

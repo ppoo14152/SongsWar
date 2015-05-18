@@ -19,7 +19,7 @@ public class Nivel3 extends World
     private GreenfootSound music;
     public Nivel3()
     {    
-       super(990, 657, 1); 
+       super(800, 600, 1); 
         
        
         Heroe es=new Espadachin();

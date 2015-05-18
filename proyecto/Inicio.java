@@ -13,13 +13,20 @@ public class Inicio extends Boton
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
     World w=getWorld();
-
+    private GreenfootSound music;
+    public Inicio()
+    {
+        music=new GreenfootSound("17 Starfleet.mp3");
+    }
+       
     public void act() 
     { 
         if(Greenfoot.mouseClicked(this))
         {
             w=new PantallaEspera(1);
             Greenfoot.setWorld(w);
+            music=new GreenfootSound("17 Starfleet.mp3");
+            music.play();
         }
         if(Greenfoot.mouseMoved(this))
         {

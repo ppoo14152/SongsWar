@@ -18,11 +18,10 @@ public class PantallaTitulo extends World
     public PantallaTitulo()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
-        super(960, 544, 1); 
+        super(800, 600, 1); 
        //Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
-       music=new GreenfootSound("17 Starfleet.mp3");
-       music.play();
-       music.setVolume(20);
+       
+       //music.setVolume(20);
         titulo t=new titulo();
         Boton b=new Inicio();
         Boton a=new Ayuda();

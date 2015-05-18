@@ -20,7 +20,7 @@ private GreenfootSound music;
     public Nivel1()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
-        super(990, 660, 1); 
+        super(800, 600, 1); 
         
         Heroe es=new Espadachin();
         Heroe cab=new Caballero();
