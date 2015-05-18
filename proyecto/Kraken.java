@@ -51,7 +51,7 @@ public class Kraken extends Enemigo
         Ataque=40;
         Defensa=100;
         Dano=0;
-        v=new Vida(1000);
+        v=new Vida(900);
         h=new Heroe();
         imgRep=new LinkedList<GreenfootImage>();
         imgAtk=new LinkedList<GreenfootImage>();

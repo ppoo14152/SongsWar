@@ -87,10 +87,10 @@ public class Espadachin extends Heroe
 
             Regreso();
         }
-        if(!this.isTouching(Llama.class) || !this.isTouching(Garra.class)){
+        /*if(this.isTouching(Llama.class) || this.isTouching(Garra.class)){
             band3=0;}
         else
-            band3=1;
+            band3=1;*/
 
         if(this.isTouching(Enemigo.class) && band3!=1){
             Golpe.play();

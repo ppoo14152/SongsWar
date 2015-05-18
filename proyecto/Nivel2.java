@@ -38,7 +38,7 @@ public class Nivel2 extends World
         addObject(p,100,200);
         addObject(com,550,100);
         addObject(a,500,450);
-        addObject(kr,680,500);
+        addObject(kr,600,500);
         addObject(cab,200,500);
         addObject(es,250,500);  
         addObject(ar,150,500);

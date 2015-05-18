@@ -71,10 +71,10 @@ public class Arquero extends Heroe
             setImage("Arquero.png");
 
         }
-        if(!this.isTouching(Llama.class) || !this.isTouching(Garra.class)){
+       /* if(this.isTouching(Llama.class) || this.isTouching(Garra.class)){
             band3=0;}
         else
-            band3=1;
+            band3=1;*/
         if(this.isTouching(Enemigo.class) && band3!=1){
             DanoRes=super.restaSalud(Def);
             Desaparece=v.reduce(DanoRes,v.getImage(),1);

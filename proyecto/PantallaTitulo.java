@@ -22,7 +22,7 @@ public class PantallaTitulo extends World
        //Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
        music=new GreenfootSound("17 Starfleet.mp3");
        music.play();
-       music.setVolume(15);
+       music.setVolume(20);
         titulo t=new titulo();
         Boton b=new Inicio();
         Boton a=new Ayuda();
