@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Puntos()
+comment0.params=p
+comment0.target=Puntos(int)
 comment0.text=\r\n\ Constructor\ de\ Puntos\ \r\n\ aqui\ se\ definen\ las\ variables\ de\ instancia\ \r\n\ el\ score\ es\ para\ guardar\ los\ records\r\n\ r\ sera\ un\ record\ el\ cual\ servira\ para\ poder\ guardar\ los\ puntos\ \r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()

@@ -23,7 +23,7 @@ public class Inicio extends Boton
     { 
         if(Greenfoot.mouseClicked(this))
         {
-            w=new PantallaEspera(1);
+            w=new PantallaEspera(1,0);
             Greenfoot.setWorld(w);
             music=new GreenfootSound("17 Starfleet.mp3");
             music.play();

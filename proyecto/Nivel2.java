@@ -16,7 +16,8 @@ public class Nivel2 extends World
      * 
      */
     private GreenfootSound music;
-    public Nivel2()
+    
+    public Nivel2(int score)
     {    
         super(800, 600, 1); 
 
@@ -27,8 +28,9 @@ public class Nivel2 extends World
         Muro a=new Atalaya();
         Enemigo kr=new Kraken();
         Comando com=new Comando();
-        Puntos p=new Puntos();
-
+        Puntos p=new Puntos(score);
+        score=p.getPuntos();
+        System.out.println(score);
         addObject(f,150,500);    
         showText("Ataque",50,50);
         showText("Q-E-R",50,70);

@@ -16,8 +16,8 @@ private GreenfootSound music;
      * Constructor para objetos de clase esenario.
      * 
      */
-    private List H;
-    public Nivel1()
+    private int score;
+    public Nivel1(int score)
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
         super(800, 600, 1); 
@@ -30,11 +30,13 @@ private GreenfootSound music;
               
         Enemigo enem=new Coloso();
         Comando com=new Comando();
-        Puntos punt=new Puntos();
+        Puntos punt=new Puntos(score);
         showText("Ataque",50,50);
         showText("Q-E-R",50,70);
         showText("Defensa",50,100);
         showText("W-E-Q",50,120);
+        score=punt.getPuntos();
+        
         
         addObject(f,150,500);        
         addObject(punt,100,200);

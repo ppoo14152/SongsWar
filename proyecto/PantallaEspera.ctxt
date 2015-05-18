@@ -1,4 +1,4 @@
 #BlueJ class context
-comment0.params=Nivel
-comment0.target=PantallaEspera(int)
+comment0.params=Nivel\ p
+comment0.target=PantallaEspera(int,\ int)
 numComments=1

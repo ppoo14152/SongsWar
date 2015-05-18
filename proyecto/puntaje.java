@@ -24,6 +24,6 @@ public class puntaje extends World
         ScoreBoard sp=new ScoreBoard(500,300);
         back=new Back();
         addObject(back,600,600);
-        addObject(sp,553,304);
+        addObject(sp,400,300);
     }
 }

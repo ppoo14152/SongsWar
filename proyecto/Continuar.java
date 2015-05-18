@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.*;
 /**
  * Esta Clase sirve para poder avanzar al siguiente nivel
  * esta recibira una variable para poder seleccionar que  nivel sigue a ejecutar
@@ -15,38 +15,52 @@ public class Continuar extends Boton
      */
     private int Nivel;
     private World w;
+    private List puntos;
+    private int p;
     /**
      * Constructor de Continuar, recibe una variable para poder seleccionar que nivel sigue 
      * 
      * a ejecutar
      */
-    public Continuar(int n)
+    public Continuar(int n,int punt)
+    
     {
+        p=punt;
         Nivel=n;
     }
 
     public void act() 
     {
         w=getWorld();
-        System.out.println(Nivel);
+       System.out.println(p);
         if(Greenfoot.mouseClicked(this))
         {
 
             if(Nivel==1){
-                w=new Nivel1();
-                Greenfoot.setWorld(w);}}
+                w=new Nivel1(0);
+                Greenfoot.setWorld(w);
+                w.showText("Nivel 1",400,560);}}
         if(Greenfoot.mouseClicked(this))
         {
-
+            
             if(Nivel==2){
-                w=new Nivel2();
-                Greenfoot.setWorld(w);}}
+                
+                
+                
+                w=new Nivel2(p);
+                Greenfoot.setWorld(w);
+            w.showText("Nivel 2",400,560);}}
         if(Greenfoot.mouseClicked(this))
         {
 
             if(Nivel==3){
-                w=new Nivel3();
-                Greenfoot.setWorld(w);}}
+                 puntos=w.getObjects(Puntos.class);
+
+
+        
+                w=new Nivel3(p);
+                Greenfoot.setWorld(w);
+            w.showText("Nivel 3",400,560);}}
 
     }
 }

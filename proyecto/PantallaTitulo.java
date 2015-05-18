@@ -26,9 +26,9 @@ public class PantallaTitulo extends World
         Boton b=new Inicio();
         Boton a=new Ayuda();
         Boton r=new Recods();
-        addObject(r,450,260);
-        addObject(a,600,300);
-        addObject(b,300,300);
-        addObject(t,450,100);
+        addObject(r,380,270);
+        addObject(a,490,310);
+        addObject(b,270,300);
+        addObject(t,350,100);
     }
 }

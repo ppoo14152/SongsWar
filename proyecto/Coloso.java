@@ -35,6 +35,7 @@ public class Coloso extends Enemigo
     private GreenfootImage Coloso3;
     private List M;
     private List H;
+    private List P;
     private long seg;
     private GreenfootSound SonidoAtk;
    /**
@@ -51,6 +52,7 @@ public class Coloso extends Enemigo
         ideAtk=0;
         i=0;
         Com=1;
+
         band=false;        
         heroAtk=new Heroe();
         h=new Heroe();
@@ -71,7 +73,7 @@ public class Coloso extends Enemigo
         g=new GameOver();
         M=w.getObjects(Muro.class);
         H=w.getObjects(Heroe.class);
-        n=new PantallaEspera(2);
+        
         int bandR=h.setCom();
        if(H.isEmpty()){
                 Greenfoot.setWorld(g);}
@@ -91,8 +93,12 @@ public class Coloso extends Enemigo
                 if(Desaparece==false)
                 w.addObject(v,500,600);
                 else if(Desaparece==true) {
+                 P=w.getObjects(Puntos.class);
+                 Object p=P.get(0);
+                 int punt=((Puntos)p).getPuntos();
                  w.removeObject(v);
                  w.removeObject(this);
+                 n=new PantallaEspera(2,punt);
                  
                  Greenfoot.setWorld(n);
                 }

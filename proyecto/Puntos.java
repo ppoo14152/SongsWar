@@ -31,10 +31,10 @@ public class Puntos extends Actor
      * r sera un record el cual servira para poder guardar los puntos 
      * 
      */
-    public Puntos()
+    public Puntos(int p)
     {
 
-        score=0;
+        score=p;
         r=new Record();
         j=0;
         i=0;
@@ -55,23 +55,30 @@ public class Puntos extends Actor
         E=w.getObjects(Enemigo.class);
         if(k==0){
             if(M.isEmpty()&& band==0){
-
-                setPuntos(200);
+                int num=Greenfoot.getRandomNumber(300);
+                setPuntos(num);
                 w.showText(" "+ score,50,170);
                 band=1; }
             if(E.isEmpty() && band==1){
-                setPuntos(500);
+                int num=Greenfoot.getRandomNumber(300);
+                setPuntos(num);
                 w.showText(" "+score,50,170);
                 band=2;}
         }
-        else
-        {
+        else if(k>0 && j>0){
+        
             if(M.isEmpty() && band==0)        {
-                setPuntos(100);
+                int num=Greenfoot.getRandomNumber(300);
+               
+                num=num+100;
+                setPuntos(num);
                 w.showText(" "+score,50,170);
                 band=1;}
             if(E.isEmpty()&& band==1){
-                setPuntos(300);
+                int num=Greenfoot.getRandomNumber(500);
+                
+                num=num+100;
+                setPuntos(num);
                 w.showText(" "+score,50,170);
                 band=2;}
         }

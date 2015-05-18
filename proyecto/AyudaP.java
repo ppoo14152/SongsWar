@@ -13,6 +13,6 @@ public class AyudaP extends World
     {super(800,600,1);
 
         Boton B=new Back();
-        addObject(B,600,500);
+        addObject(B,650,600);
     }    
 }

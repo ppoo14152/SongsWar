@@ -17,7 +17,7 @@ public class Nivel3 extends World
      * 
      */
     private GreenfootSound music;
-    public Nivel3()
+    public Nivel3(int score)
     {    
        super(800, 600, 1); 
         
@@ -33,7 +33,7 @@ public class Nivel3 extends World
         showText("Q-E-R",50,70);
         showText("Defensa",50,100);
         showText("W-E-Q",50,120);
-         Puntos p=new Puntos();
+         Puntos p=new Puntos(score);
         addObject(ar,150,500);
         addObject(f,150,500);        
         addObject(p,100,200);

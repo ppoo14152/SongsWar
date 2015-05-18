@@ -27,6 +27,7 @@ public class Kraken extends Enemigo
     private World g;
     private Vida v;
     private Heroe h;
+    private List P;
     private long seg;
     private boolean band;
     private boolean Desaparece;
@@ -71,7 +72,7 @@ public class Kraken extends Enemigo
     public void act() 
     {
         w=getWorld();
-        n=new Nivel3();
+        
         g=new GameOver();
         H=w.getObjects(Heroe.class);
         int bandR=h.setCom();
@@ -107,10 +108,12 @@ public class Kraken extends Enemigo
             w.addObject(v,500,600);
 
         else if(Desaparece==true){
-
+            P=w.getObjects(Puntos.class);
+            Object p=P.get(0);
+            int punt=((Puntos)p).getPuntos();
             w.removeObject(v);
             w.removeObject(this);
-            n=new PantallaEspera(3);
+            n=new PantallaEspera(3,punt);
             Greenfoot.setWorld(n);}
 
         // System.out.println(num);
