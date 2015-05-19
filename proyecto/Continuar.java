@@ -19,8 +19,9 @@ public class Continuar extends Boton
     private int p;
     /**
      * Constructor de Continuar, recibe una variable para poder seleccionar que nivel sigue 
-     * 
      * a ejecutar
+     * @param n es el nivel  siguiente
+     * @param punt en el puntaje acumulado
      */
     public Continuar(int n,int punt)
     

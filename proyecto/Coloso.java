@@ -23,17 +23,17 @@ public class Coloso extends Enemigo
     private boolean band;
     private boolean Desaparece;
     private int Com;
-    private World w;
-    private World n;
-    private World g;
-    private Vida v;
-    private Heroe h;
+    private World w;//mundo  para obetenr objetos de el
+    private World n;//mundo para crear niveles
+    private World g;//mundo para dar un game over
+    private Vida v;//vida
+    private Heroe h;//heroe
     private Actor heroAtk;
-    private LinkedList<GreenfootImage> Enem;
-    private GreenfootImage Coloso1;
-    private GreenfootImage Coloso2;
-    private GreenfootImage Coloso3;
-    private List M;
+    private LinkedList<GreenfootImage> Enem;//lista de animacion enemigo
+    private GreenfootImage Coloso1;//imagen
+    private GreenfootImage Coloso2;//imagen
+    private GreenfootImage Coloso3;//imagen
+    private List M;//lista para guargar actores del mundo
     private List H;
     private List P;
     private long seg;
@@ -157,7 +157,8 @@ public class Coloso extends Enemigo
         }
     }
     /**
-     * este metodo regresa el ataque de este Enemigo
+     * Este metodo regresa el ataque de este Enemigo
+     * @return Atk ataque del enemigo
      */
     public int getAtk()
     {

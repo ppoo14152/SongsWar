@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Escribe una descrición de la clase titulo aquí.
+ * Se usa de  titulo en el  Mundo pantallaTitulo
  * 
  * @autor (tu nombre) 
  * @versión (Un número de versión o una fecha)

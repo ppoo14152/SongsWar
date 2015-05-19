@@ -122,7 +122,7 @@ public class Espadachin extends Heroe
     }
 
     /**
-     * regresa el ataque de este heroe
+     * @return Ataque regresa el ataque de este heroe
      */
     public int getAtk()
     {
@@ -135,6 +135,7 @@ public class Espadachin extends Heroe
      * usa las listas y un indice 
      * para poder ir cambiando las imagenes
      * ademas de regresar una bandera para poder regresar al heroe a sus estado original
+     * @return band2 una bandera
      */
     public int Ataque()
     {  

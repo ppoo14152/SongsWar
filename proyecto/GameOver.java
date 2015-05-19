@@ -14,7 +14,7 @@ public class GameOver extends World
      * Constructor para objetos de clase GameOver.
      * 
      */
-    private PantallaTitulo p;
+   
     public GameOver()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.

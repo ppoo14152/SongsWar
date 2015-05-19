@@ -2,7 +2,7 @@ import greenfoot.UserInfo;
 /**
  * Esta clase guarda los puntos y los regresa en la clase scoreBoard
  * 
- * @autor Omar Agustin Valadez Hernandez
+ * @autor Ignacio Cerda Varela
  * @versión Mayo 2015
  */
 public class Record  

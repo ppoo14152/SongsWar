@@ -14,7 +14,7 @@ public class puntaje extends World
 
     /**
      * Constructor para objetos de clase puntaje.
-     * 
+     * Se declara un score board  y se añanade al mundo
      */
     private Boton back;
     public puntaje()

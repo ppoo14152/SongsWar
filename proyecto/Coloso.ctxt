@@ -12,5 +12,5 @@ comment3.target=void\ Regreso()
 comment3.text=\r\n\ Este\ metodo\ pone\ en\ la\ posicion\ original\ a\ este\ enemigo\r\n
 comment4.params=
 comment4.target=int\ getAtk()
-comment4.text=\r\n\ este\ metodo\ regresa\ el\ ataque\ de\ este\ Enemigo\r\n
+comment4.text=\r\n\ Este\ metodo\ regresa\ el\ ataque\ de\ este\ Enemigo\r\n\ @return\ Atk\ ataque\ del\ enemigo\r\n
 numComments=5

@@ -1,11 +1,11 @@
 import greenfoot.*;
 import java.awt.*;
 /**
- * Escribe una descrición de la clase Boton aquí.
+ * indica que sus subclases son botones
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
- */
+ * @autor Omar Agustin aladez Heernandez
+ * @versión Mayo 2015
+   */
 public class Boton extends Actor
 {
     /**

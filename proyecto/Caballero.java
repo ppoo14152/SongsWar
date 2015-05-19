@@ -6,7 +6,7 @@ import java.util.*;
  * aqui se declaran el ataque ,la defensa las lista con imagenes para la animacion
  * variables de mundo para poder eliminar a este heroe 
  * movimiento sirve para darle un numero para que alcance a los enemigos mas facil  
- * 
+ * @see javva.util.*; se usa para poder acceder a las listas para realizar animaciones
  * @autor Omar Agustin Valadez Hernandes 
  * @versión 3.0 Mayo 2015
  */
@@ -25,9 +25,9 @@ public class Caballero extends Heroe
     private boolean Desaparece;
     private Vida v;
     private List M;
-    private World w;
-    private LinkedList<GreenfootImage> HCab;
-    private GreenfootImage CabAtk01;
+    private World w;//mundo para obtener objetos de el
+    private LinkedList<GreenfootImage> HCab;//lista de animacion
+    private GreenfootImage CabAtk01;//imagen de ataque
     private GreenfootImage CabAtk02;
     private GreenfootImage CabAtk03;
     /**
@@ -101,6 +101,7 @@ public class Caballero extends Heroe
      * en este metodo se utiliza para poder hacer la animacio de movimiento y que se ejecute 
      * el movimiento hacia el enmmigo, las animaciones de hiran poniendo de forma automatica segun
      * vaya avanzando
+     * @return band2
      */
     public int Ataque()
     {  
@@ -133,7 +134,7 @@ public class Caballero extends Heroe
         
     }
     /**
-     * regresa el ataque de este heroe
+     * @return Ataque regresa el ataque de este heroe
      */
     public int getAtk()
     {

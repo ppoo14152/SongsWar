@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * Esta clase solo la usa el enemigo Dragon
  * 
- * @autor Omar Agustin Valadez Hernandes
+ * @autor Omar Agustin Valadez Hernandez
  * @versión Mayo 2015
  */
 public class Garra extends Actor

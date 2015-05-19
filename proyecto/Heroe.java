@@ -1,15 +1,15 @@
 import greenfoot.*;
 import java.util.*;
-import java.util.Scanner;
+
 /**
  * Esta clase define los metodos que usaran todos los heroes, como reducir su vida y 
  * colocar un comando para que los heroes actuen 
  * se declaran una serie de bandras para ejecutar ciertas acciones y definir 
  * los comandos
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
- */
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión 1.0 abril 2015
+   */
 public class Heroe extends Actor 
 {
     private int comando;
@@ -19,7 +19,7 @@ public class Heroe extends Actor
     private int Atk;
     private Comando imgCom;
     private World w;
-    private World G;
+    
     private int i;
     private Actor eneAtk;
     private int Dano;
@@ -29,7 +29,7 @@ public class Heroe extends Actor
     private boolean band2;
     private int Resistencia;
     private List H;
-    /**}
+    /**
      * Constructor de Heroe  
      * aqui se definen las variables principales como el comando 
      * banderas booleanas el daño y la resistencia
@@ -117,6 +117,8 @@ public class Heroe extends Actor
      * se contrarrestara para hacer un menor daño 
      * se captura el nombre de la clse que se intersecciona y de acuerdo a el se añande un daño 
      * el cual se restara
+     * @param Resistencia
+     * @return DaanoTotal
      */
     public int restaSalud(int Resistencia)
     {
@@ -147,7 +149,7 @@ public class Heroe extends Actor
     }
 
     /**
-     * regresa una bandera para poder activar una animacion de los heroes
+     *@return Reg regresa una bandera para poder activar una animacion de los heroes
      */
     public boolean getReg()
     {
@@ -155,23 +157,29 @@ public class Heroe extends Actor
     }
 
     /**
-     * se coloca una nueva bandera
+     *@param R se coloca una nueva bandera
      */
     public void setReg(boolean R)
     {
         Reg=R;
     }
-
+    /**
+     * @return band regresa una bandera
+     */
     public int getBand()
     {
         return band;
     }
-
+    /**
+     * @return comando regresa el comando establecido
+     */
     public int getComando()
     {
         return comando;
     }
-
+    /**
+     * @param recibe como parametro un nuevo daño
+     */
     public void setDano(int d)
     {
         DanoTotal=d;

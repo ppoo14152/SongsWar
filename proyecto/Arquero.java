@@ -97,7 +97,7 @@ public class Arquero extends Heroe
     }
     /**
      * 
-     *regresa el ataque
+     *@return Ataque regresa el ataque
      */
     public int getAtk()
     {

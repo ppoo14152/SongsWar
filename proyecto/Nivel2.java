@@ -13,13 +13,14 @@ public class Nivel2 extends World
 
     /**
      * Constructor para objetos de clase Nivel2.
+     *  en ella se colocan todos lo elementos que estaran en el mundo en el nivel 2
      * 
+     * @param score recibbe como parametro la puntuacion acumulada
      */
-    private GreenfootSound music;
-    
+      
     public Nivel2(int score)
     {    
-        super(800, 600, 1); 
+        super(900, 700, 1); 
 
         Heroe es=new Espadachin();
         Heroe cab=new Caballero();

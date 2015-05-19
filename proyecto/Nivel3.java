@@ -14,12 +14,14 @@ public class Nivel3 extends World
 
     /**
      * Constructor para objetos de clase Nivel3.
+     *  en ella se colocan todos lo elementos que estaran en el mundo en el nivel 3
      * 
+     * @param recibe como parametro la puntuacion acumulada
      */
     private GreenfootSound music;
     public Nivel3(int score)
     {    
-       super(800, 600, 1); 
+       super(900, 700, 1); 
         
        
         Heroe es=new Espadachin();

@@ -19,7 +19,13 @@ public class Enemigo extends Actor
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
-    }    
+    } 
+    /**
+     * Constructor de clase Enemigo 
+     * Se definen las  variables de instanci
+     * inicializando todas en cero
+     * exepto heroAtk que se tiene que declarar un Actor
+     */
 
     public Enemigo()
     {
@@ -33,7 +39,8 @@ public class Enemigo extends Actor
     }
 
     /**
-     * Este metodo recibe como parametro la resistencia del enemigo la cual
+     * @param Resistencia Este metodo recibe como parametro la resistencia del enemigo la cual
+     * @return DanoTotal es el daño total que se tendra que restar a la vida
      * se contrarrestara para hacer un menor daño 
      * se captura el nombre de la clse que se intersecciona y de acuerdo a el se añande un daño 
      * el cual se restara
@@ -58,7 +65,8 @@ public class Enemigo extends Actor
     }
 
     /**
-     * este metodo coloca una resistencia x al enemigo
+     * Este metodo coloca una resistencia x al enemigo
+     * @param Resibe com parametro una ueva resistencia
      */
 
     public void setResistencia(int Res)

@@ -11,41 +11,42 @@ import java.util.*;
  * una variable de tiempo para poder animar al enemigo
  * ademas este enemigo usa una clase llamada grras y llamas 
  * la cual utiliza para poder atacar
+ * @see java.util.*; para poder hacer uso de listas para animar al Actor
  * @autor Omar Agustin Valadez Hernandez
  * @versión Mayo 2015
  */
 public class Dragon extends Enemigo
 {
-    private GreenfootImage Dragon1;
+    private GreenfootImage Dragon1;//imagen
     private GreenfootImage Dragon2;
     private GreenfootImage Dragon3;
     private GreenfootImage Dragon4;
 
-    private LinkedList<GreenfootImage> imgRep;
+    private LinkedList<GreenfootImage> imgRep;//lista para la animacion en reposo
 
     private Garra garra;
     private Llama llama;
-    private World w;
-    private World g;
-    private World n;
-    private Vida v;
-    private Heroe h;
+    private World w;//mundo para obetener actores de el
+    private World n;//mundo para crear un nuevo nivel
+    private World g;//mundo para dar un game over
+    private Vida v;//vida
+    private Heroe h;//heroe
     private long seg;
-    private boolean band;
+    private boolean band;//banderas
     private boolean band2;
     private boolean band3;
     private boolean band4;
     private boolean Desaparece;
-    private int i;
+    private int i;//contadores o indices para la animcaion
     private int j;
     private int k;
     private int Dano;
     private int Atk;
-    private int Def;
-    private List M;
+    private int Def;//defensa
+    private List M;//listas para guardar actores
     private List l;
     private List H;
-    private Flecha f;
+    private Flecha f;//flecha
     private GreenfootSound SonidoAtk;
     /**
      * Constructor Dragon en el se definen el ataque la defensa y se 
@@ -142,7 +143,7 @@ public class Dragon extends Enemigo
      * ejecutara por medio de un numero aleatorio
      * regresa una bandera que el enemigo usara para saber si esta tocando una flecha o no 
      * 
-     */
+     * */
     public boolean Ataque()
     {
         int num=Greenfoot.getRandomNumber(15);
@@ -168,6 +169,8 @@ public class Dragon extends Enemigo
      * añanadira un objeto llama , y movera al enemigo.
      * cuando la x tenga cierto  valor se eliminara la llama del mundo
      * regresara una bandera para que el enemigo pudea ajustar su posicion en el mundo 
+     * @return band2 regresa una bandera para podern regresar al enemigo a su posicion original
+     *
      */
 
     public boolean AtaqueLlama()
@@ -191,6 +194,8 @@ public class Dragon extends Enemigo
      * Este metodo añanadira un objeto Garra la cual la colocara y la movera para alcanzar a los heroes 
      * segun el numeero de x , se removera del mundo este objeto
      * regresara una bandera para que el enemigo pueda ajustar su posicion
+     * @return band2 regresa una bandera para podern regresar al enemigo a su posicion original
+     *
      */
 
     public boolean AtaqueGarra()
@@ -211,7 +216,7 @@ public class Dragon extends Enemigo
     }
 
     /**
-     * regresa el ataque de este enemigo
+     * @return Atk regresa el ataque de este enemigo
      */
     public int getAtk()
     {

@@ -12,6 +12,9 @@ public class PantallaEspera extends World
     /**
      * Constructor para objetos de clase PantallaEspera.
      * El constructor Recibe como parametro un Entero el cual sera el nivel que seguira a colocar
+     * Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
+     * @param Nivel se recibe el Nivel siguiente 
+     * @param p es la puntuacion que se va acumulando 
      */
     
     private Boton continuar;

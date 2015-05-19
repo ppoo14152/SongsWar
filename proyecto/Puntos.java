@@ -12,15 +12,15 @@ public class Puntos extends Actor
 {
     private int score;
 
-    private Record r;
-    private World w;
-    private List M;
+    private Record r;//se usa para un nuevo record
+    private World w;//mundo para obtener onjetos de el
+    private List M;//se usa para guardar actores en ella
     private List E;
     private String puntos;
-    private String tim;
-    private Counter count;
-    private int band;
-    private int i;
+    private String tim;//cadena para mostrar el tiempo
+
+    private int band;//banderas
+    private int i;//contadores
     private int j;
     private int k;
 
@@ -29,7 +29,7 @@ public class Puntos extends Actor
      * aqui se definen las variables de instancia 
      * el score es para guardar los records
      * r sera un record el cual servira para poder guardar los puntos 
-     * 
+     * @param p recibe los puntos acumulados
      */
     public Puntos(int p)
     {
@@ -40,7 +40,7 @@ public class Puntos extends Actor
         i=0;
         k=0;
         band=0;
-        count=new Counter();
+
     }
 
     /**
@@ -109,7 +109,7 @@ public class Puntos extends Actor
     }
 
     /**
-     * cooca los  puntos
+     * @param p coloca los nuevos puntos y los acumula
      */
     public void setPuntos(int p)
     {         
@@ -118,6 +118,8 @@ public class Puntos extends Actor
 
     /**
      * convierte a cadena un entero
+     * @param t recibe un entero a comvertir
+     * @return " "+t regresa una cadena 
      */
     public String toString(int t)
     {
@@ -125,7 +127,7 @@ public class Puntos extends Actor
     }
 
     /**
-     * regresa el total de puntos
+     * @return score regresa el total de puntos
      */
     public int getPuntos()
     {

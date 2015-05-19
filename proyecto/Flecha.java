@@ -48,7 +48,7 @@ public class Flecha extends Actor
         w.removeObject(this);
     }   
     /**
-     * regresa el ataque del arquero
+     * @return Atk regresa el ataque del arquero
      */
     public int getAtk()
     {

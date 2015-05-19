@@ -9,35 +9,36 @@ import java.util.*;
  * Una lista para ejecutar la animacion del enemigo
  * listas para saber que actores ya no exsisten en el mundo
  * una variable de tiempo para poder animar al enemigo
+ * @see java.util.*; para hacer uso de listas para hacer la animacion del Actor
  * @autor Omar Agustin Valadez Hernandez
  * @versión Mayo 2015
  */
 public class Kraken extends Enemigo
 {
-    private GreenfootImage Kraken1;
+    private GreenfootImage Kraken1;//imagen
     private GreenfootImage Kraken2;
     private GreenfootImage Kraken3;
     private GreenfootImage KrakenAtk1;
     private GreenfootImage KrakenAtk2;
     private GreenfootImage KrakenAtk3;
-    private LinkedList<GreenfootImage> imgRep;
-    private LinkedList<GreenfootImage> imgAtk;
-    private World w;
-    private World n;
-    private World g;
-    private Vida v;
-    private Heroe h;
+    private LinkedList<GreenfootImage> imgRep;//lista para animacion de reposo
+    private LinkedList<GreenfootImage> imgAtk;//lista para animacion de ataque
+    private World w;//mundo para obtener actores de el
+    private World n;//mundo para crear niveles 
+    private World g;//mundo para dar game over
+    private Vida v;//vida
+    private Heroe h;//heroe
     private List P;
     private long seg;
-    private boolean band;
+    private boolean band;//banderas
     private boolean Desaparece;
-    private int i;
+    private int i;//contadores o indices
     private int j;
-    private int Dano;
+    private int Dano;//daño
     private int num;
     private int Ataque;
     private int Defensa;
-    private List M;
+    private List M;//lista para guardar actores 
     private List H;
     private GreenfootSound SonidoAtk;
 
@@ -122,7 +123,9 @@ public class Kraken extends Enemigo
     /**
      * Este metodo se utiliza para que el enemigo puedda atacar a los heroes 
      * en el se usa el metodo setImage para cambiar la imagen,por la de ataque y
-     * asi poder tocar a los heroes regresa una bandera para poder ponerse en estado de reposo 
+     * asi poder tocar a los heroes 
+     * @return band regresa una bandera para poder ponerse en estado de reposo 
+     * 
      */
     public boolean Ataque()
     { 
@@ -144,7 +147,7 @@ public class Kraken extends Enemigo
     }
 
     /**
-     * regresa el ataque de este enemigo 
+     * @Ataque regresa el ataque de este enemigo 
      */
     public int getAtk()
     {

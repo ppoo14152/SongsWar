@@ -10,11 +10,11 @@ public class PantallaTitulo extends World
 {
 
     /**
-     * Constructor para objetos de clase Muro.
-     *GreenfootSound music se usa para reproducir la musica que se reproducira
-     *en el juego
+     * Constructor para objetos de clase PantallaTitulo.
+     *Se declaran principalmente botones que nos serviran para acceder al juego 
+     *u otras caracteristicas
      */
-    private GreenfootSound music;
+ 
     public PantallaTitulo()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Comando()
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ Comando\r\n\ en\ el\ se\ decllaran\ todas\ las\ lista\ y\ se\ cargan\ imagenes\ en\ ella\r\n\ \r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Comando\r\n\ en\ el\ se\ declaran\ todas\ las\ lista\ y\ se\ cargan\ imagenes\ en\ ella\r\n\ Las\ banderas\ a\ utilizar\ y\ los\ indices\ de\ las\ imagenes\ que\ son\:\r\n\ i,count\r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

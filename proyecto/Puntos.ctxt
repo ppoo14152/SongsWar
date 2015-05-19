@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.params=p
 comment0.target=Puntos(int)
-comment0.text=\r\n\ Constructor\ de\ Puntos\ \r\n\ aqui\ se\ definen\ las\ variables\ de\ instancia\ \r\n\ el\ score\ es\ para\ guardar\ los\ records\r\n\ r\ sera\ un\ record\ el\ cual\ servira\ para\ poder\ guardar\ los\ puntos\ \r\n\ \r\n
+comment0.text=\r\n\ Constructor\ de\ Puntos\ \r\n\ aqui\ se\ definen\ las\ variables\ de\ instancia\ \r\n\ el\ score\ es\ para\ guardar\ los\ records\r\n\ r\ sera\ un\ record\ el\ cual\ servira\ para\ poder\ guardar\ los\ puntos\ \r\n\ @param\ p\ recibe\ los\ puntos\ acumulados\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ hace\ lo\ que\ Puntos\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n
 comment2.params=p
 comment2.target=void\ setPuntos(int)
-comment2.text=\r\n\ cooca\ los\ \ puntos\r\n
+comment2.text=\r\n\ @param\ p\ coloca\ los\ nuevos\ puntos\ y\ los\ acumula\r\n
 comment3.params=t
 comment3.target=java.lang.String\ toString(int)
-comment3.text=\r\n\ convierte\ a\ cadena\ un\ entero\r\n
+comment3.text=\r\n\ convierte\ a\ cadena\ un\ entero\r\n\ @param\ t\ recibe\ un\ entero\ a\ comvertir\r\n\ @return\ "\ "+t\ regresa\ una\ cadena\ \r\n
 comment4.params=
 comment4.target=int\ getPuntos()
-comment4.text=\r\n\ regresa\ el\ total\ de\ puntos\r\n
+comment4.text=\r\n\ @return\ score\ regresa\ el\ total\ de\ puntos\r\n
 numComments=5

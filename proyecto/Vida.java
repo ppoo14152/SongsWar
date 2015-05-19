@@ -3,10 +3,10 @@ import java.awt.*;
 import java.util.*;
 /**
  * Escribe una descrición de la clase Vida aquí.
- * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
- */
+ * @see java.awt.*; para poder hacer uso de la clase color para darle color a la vida
+ * @autor Omar Agustin Valadez Hernandez
+ * @versión Mayo 2015
+   */
 public class Vida extends Actor
 {
    private boolean band;
@@ -17,6 +17,10 @@ public class Vida extends Actor
     {
         
     }   
+    /**
+     * Constructor de Vida
+     * @param size recibe el tamaño de la nueva vida
+     */
     public Vida(int size)
     {
       
@@ -26,7 +30,13 @@ public class Vida extends Actor
        setImage(vida);
        
     }
-    
+    /**
+     * Coloca una nueva imagen con un tamaño nuevo para poder hacer que se reduca la vida 
+     * @param dano se usa para darle un nuevvo  tamaño a la vida
+     * @param img recibe la imagen a la cual se va a redefinir 
+     * @param c el un indice para colocar el color
+     * @return boolean regresa  un booleano para indicar si se debe de remover este objeto o no
+     */
     public boolean reduce(int dano,GreenfootImage img,int c )
     {   
         int vid=(img.getWidth())-dano;

@@ -37,6 +37,7 @@ public class Muro extends Actor
      * se contrarrestara para hacer un menor daño 
      * se captura el nombre de la clse que se intersecciona y de acuerdo a el se añande un daño 
      * el cual se restara
+     * @return DanoTotal regresa el daño que se restara a la resistencia del muro
      */
     public int restaSalud()
     {
@@ -62,6 +63,7 @@ public class Muro extends Actor
 
     /**
      * este metodo coloca el nuevo daño 
+     * @param Dano recibe un nuevo daño
      */
     public void setDano(int Dano)
     {
