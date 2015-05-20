@@ -3,8 +3,8 @@ import greenfoot.*;
 /**
  * Se usa de  titulo en el  Mundo pantallaTitulo
  * 
- * @autor (tu nombre) 
- * @versión (Un número de versión o una fecha)
+ * @autor Omar Agustin Valadez Hernandez 
+ * @versión Mayo 2015
  */
 public class titulo extends Actor
 {

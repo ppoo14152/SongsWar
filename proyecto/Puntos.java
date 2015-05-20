@@ -12,17 +12,17 @@ public class Puntos extends Actor
 {
     private int score;
 
-    private Record r;//se usa para un nuevo record
-    private World w;//mundo para obtener onjetos de el
-    private List M;//se usa para guardar actores en ella
-    private List E;
+    private Record record;//se usa para un nuevo record
+    private World world;//mundo para obtener onjetos de el
+    private List muroList;//se usa para guardar actores en ella
+    private List enemigoList;
     private String puntos;
-    private String tim;//cadena para mostrar el tiempo
+    private String tiempo;//cadena para mostrar el tiempo
 
-    private int band;//banderas
-    private int i;//contadores
-    private int j;
-    private int k;
+    private int bandSuma;//banderas
+    private int iterador;//contadores
+    private int segundo;
+    private int minuto;
 
     /**
      * Constructor de Puntos 
@@ -35,11 +35,11 @@ public class Puntos extends Actor
     {
 
         score=p;
-        r=new Record();
-        j=0;
-        i=0;
-        k=0;
-        band=0;
+        record=new Record();
+        segundo=0;
+        iterador=0;
+        minuto=0;
+        bandSuma=0;
 
     }
 
@@ -49,60 +49,60 @@ public class Puntos extends Actor
      */
     public void act() 
     {
-        w=getWorld();
-        w.showText("Puntos",50,150);
-        M=w.getObjects(Muro.class);
-        E=w.getObjects(Enemigo.class);
-        if(k==0){
-            if(M.isEmpty()&& band==0){
+        world=getWorld();
+        world.showText("Puntos",50,150);
+        muroList=world.getObjects(Muro.class);
+        enemigoList=world.getObjects(Enemigo.class);
+        if(minuto==0){
+            if(muroList.isEmpty()&& bandSuma==0){
                 int num=Greenfoot.getRandomNumber(300);
                 setPuntos(num);
-                w.showText(" "+ score,50,170);
-                band=1; }
-            if(E.isEmpty() && band==1){
+                world.showText(" "+ score,50,170);
+                bandSuma=1; }
+            if(enemigoList.isEmpty() && bandSuma==1){
                 int num=Greenfoot.getRandomNumber(300);
                 setPuntos(num);
-                w.showText(" "+score,50,170);
-                band=2;}
+                world.showText(" "+score,50,170);
+                bandSuma=2;}
         }
-        else if(k>0 && j>0){
+        else if(minuto>0 || segundo>0){
         
-            if(M.isEmpty() && band==0)        {
+            if(muroList.isEmpty() && bandSuma==0)        {
                 int num=Greenfoot.getRandomNumber(300);
                
                 num=num+100;
                 setPuntos(num);
-                w.showText(" "+score,50,170);
-                band=1;}
-            if(E.isEmpty()&& band==1){
+                world.showText(" "+score,50,170);
+                bandSuma=1;}
+            if(enemigoList.isEmpty()&& bandSuma==1){
                 int num=Greenfoot.getRandomNumber(500);
                 
                 num=num+100;
                 setPuntos(num);
-                w.showText(" "+score,50,170);
-                band=2;}
+                world.showText(" "+score,50,170);
+                bandSuma=2;}
         }
-        w.showText("Tiempo",150,50);  
+        world.showText("Tiempo",150,50);  
         ///w.addObject(count,50,300);
 
-        if(i==8){
+        if(iterador==8){
 
-            if(j<60){
-                tim=toString(j);
-                w.showText(k+ ":"+ tim,150,100);}
+            if(segundo<60){
+                tiempo=toString(segundo);
+                world.showText(minuto + ":"+ tiempo,150,100);}
             else
             {
-                k++;
-                j=0;
-                tim=toString(j);
-                w.showText(k+":"+tim,150,100);
+                minuto++;
+                segundo=0;
+                tiempo=toString(segundo);
+                world.showText(minuto +":"+tiempo,150,100);
             }
 
-            j++;
-            i=0;}
+            segundo++;
+            iterador=0;}
 
-        i++;
-        r.guardaRecords(score);
+        iterador++;
+        record.guardaRecords(score);
         //tiempo.mark();
 
         
@@ -111,9 +111,9 @@ public class Puntos extends Actor
     /**
      * @param p coloca los nuevos puntos y los acumula
      */
-    public void setPuntos(int p)
+    public void setPuntos(int punto)
     {         
-        score=score+p;
+        score=score+punto;
     }    
 
     /**
@@ -121,9 +121,9 @@ public class Puntos extends Actor
      * @param t recibe un entero a comvertir
      * @return " "+t regresa una cadena 
      */
-    public String toString(int t)
+    public String toString(int tiempo)
     {
-        return "" + t;
+        return "" + tiempo;
     }
 
     /**

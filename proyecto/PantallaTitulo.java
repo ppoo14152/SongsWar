@@ -22,13 +22,13 @@ public class PantallaTitulo extends World
        //Greenfoot.playSound("Lindsey Stirling - Elements.mp3");
        
        //music.setVolume(20);
-        titulo t=new titulo();
-        Boton b=new Inicio();
-        Boton a=new Ayuda();
-        Boton r=new Recods();
-        addObject(r,380,270);
-        addObject(a,490,310);
-        addObject(b,270,300);
-        addObject(t,350,100);
+        titulo titulo=new titulo();
+        Boton iniciar=new Inicio();
+        Boton ayuda=new Ayuda();
+        Boton record=new Recod();
+        addObject(record,380,270);
+        addObject(ayuda,490,310);
+        addObject(iniciar,270,300);
+        addObject(titulo,350,100);
     }
 }

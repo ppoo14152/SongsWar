@@ -12,7 +12,7 @@ public class Inicio extends Boton
      * Act - hace lo que Inicio quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
-    World w=getWorld();
+    World world=getWorld();
     private GreenfootSound music;
     public Inicio()
     {
@@ -23,8 +23,8 @@ public class Inicio extends Boton
     { 
         if(Greenfoot.mouseClicked(this))
         {
-            w=new PantallaEspera(1,0);
-            Greenfoot.setWorld(w);
+            world=new PantallaEspera(1,0);
+            Greenfoot.setWorld(world);
             music=new GreenfootSound("17 Starfleet.mp3");
             music.play();
         }
@@ -33,7 +33,7 @@ public class Inicio extends Boton
             setImage("boton2.png");
 
         }
-        else if(Greenfoot.mouseMoved(w))
+        else if(Greenfoot.mouseMoved(world))
         {
             setImage("boton.png");
         }

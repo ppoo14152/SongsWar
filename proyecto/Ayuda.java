@@ -9,20 +9,20 @@ import greenfoot.*;
 public class Ayuda extends Boton
 {
   
-    World w=getWorld();
+    World world=getWorld();
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
         if(Greenfoot.mouseClicked(this))
         {
-            w=new AyudaP();
-            Greenfoot.setWorld(w);
+            world=new AyudaP();
+            Greenfoot.setWorld(world);
         }
         if(Greenfoot.mouseMoved(this))
         {
             setImage("botonA2.png");
         }
-        else if(Greenfoot.mouseMoved(w))
+        else if(Greenfoot.mouseMoved(world))
        {
             setImage("botonA.png");
        }

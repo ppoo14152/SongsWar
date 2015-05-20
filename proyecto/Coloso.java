@@ -15,155 +15,154 @@ import java.util.*;
  */
 public class Coloso extends Enemigo
 {
-    private int ideAtk;
-    private int Atk;
-    private int Defensa;
-    private int Dano;
-    private int i;
-    private boolean band;
-    private boolean Desaparece;
-    private int Com;
-    private World w;//mundo  para obetenr objetos de el
-    private World n;//mundo para crear niveles
-    private World g;//mundo para dar un game over
-    private Vida v;//vida
-    private Heroe h;//heroe
-    private Actor heroAtk;
-    private LinkedList<GreenfootImage> Enem;//lista de animacion enemigo
+    private int ideAtaque;
+    private int ataque;
+    private int defensa;
+    private int dano;
+    private int indice;
+    private boolean bandAtaque;
+    private boolean desaparece;
+    private int comando;
+    private World world;//mundo  para obetenr objetos de el
+    private Vida vida;//vida
+    private Heroe heroe;//heroe
+    private Actor heroAtaque;
+    private LinkedList<GreenfootImage> enemigo;//lista de animacion enemigo
     private GreenfootImage Coloso1;//imagen
     private GreenfootImage Coloso2;//imagen
     private GreenfootImage Coloso3;//imagen
-    private List M;//lista para guargar actores del mundo
-    private List H;
-    private List P;
-    private long seg;
+    private List muro;//lista para guargar actores del mundo
+    private List heroeLista;
+    private List puntos;
+    private long segundo;
     private GreenfootSound SonidoAtk;
-   /**
-    * Es el constructor , en se declara todas las variables de intancia ya 
-    * mencionadas arriba
-    * se carga en las lista las imagenes y se definen los valores de 
-    * las demas variables
-    */
+    /**
+     * Es el constructor , en se declara todas las variables de intancia ya 
+     * mencionadas arriba
+     * se carga en las lista las imagenes y se definen los valores de 
+     * las demas variables
+     */
     public Coloso()
     {
-        Atk=20;
-        Defensa=200;
-        Dano=0;
-        ideAtk=0;
-        i=0;
-        Com=1;
+        ataque=20;
+        defensa=200;
+        dano=0;
+        ideAtaque=0;
+        indice=0;
+        comando=1;
 
-        band=false;        
-        heroAtk=new Heroe();
-        h=new Heroe();
-        v=new Vida(1000);    
-        Enem=new LinkedList<GreenfootImage>();
-        Enem.add(Coloso1=new GreenfootImage("Coloso01.png"));
-        Enem.add(Coloso2=new GreenfootImage("Coloso02.png"));
-        Enem.add(Coloso3=new GreenfootImage("Coloso03.png"));
-        seg=System.currentTimeMillis();
-      
-         SonidoAtk= new GreenfootSound("golpear_7.mp3");
+        bandAtaque=false;        
+        heroAtaque=new Heroe();
+        heroe=new Heroe();
+        vida=new Vida(1000);    
+        enemigo=new LinkedList<GreenfootImage>();
+        enemigo.add(Coloso1=new GreenfootImage("Coloso01.png"));
+        enemigo.add(Coloso2=new GreenfootImage("Coloso02.png"));
+        enemigo.add(Coloso3=new GreenfootImage("Coloso03.png"));
+        segundo=System.currentTimeMillis();
+
+        SonidoAtk= new GreenfootSound("golpear_7.mp3");
     }
-    
+
     public void act() 
     {
-        w=getWorld();
-        
-        g=new GameOver();
-        M=w.getObjects(Muro.class);
-        H=w.getObjects(Heroe.class);
-        
-        int bandR=h.setCom();
-       if(H.isEmpty()){
-                Greenfoot.setWorld(g);}
-        if(M.isEmpty()){
-            if(Com==1 && band==false)
-                Ataque();
-            
-             if(this.isTouching(Heroe.class)){
-                 SonidoAtk.play();
-                 if( bandR==1){
-                Dano=super.restaSalud(Defensa);
-                Desaparece=v.reduce(Dano,v.getImage(),1);
-            }
-            if(!this.isTouching(Heroe.class))
-            SonidoAtk.stop();
+        world=getWorld();
+
+        muro=world.getObjects(Muro.class);
+        heroeLista=world.getObjects(Heroe.class);
+
+        int bandRegreso=heroe.setCom();
+        if(heroeLista.isEmpty()){
+            World gameO=new GameOver();//mundo para dar un game over
+            Greenfoot.setWorld(gameO);
+        }
+        if(muro.isEmpty()){
+            if(comando==1 && bandAtaque==false)
+                ataque();
+
+            if(this.isTouching(Heroe.class)){
+                SonidoAtk.play();
+                if( bandRegreso==1){
+                    dano=super.restaSalud(defensa);
+                    desaparece=vida.reduce(dano,vida.getImage(),1);
                 }
-                if(Desaparece==false)
-                w.addObject(v,500,600);
-                else if(Desaparece==true) {
-                 P=w.getObjects(Puntos.class);
-                 Object p=P.get(0);
-                 int punt=((Puntos)p).getPuntos();
-                 w.removeObject(v);
-                 w.removeObject(this);
-                 n=new PantallaEspera(2,punt);
-                 
-                 Greenfoot.setWorld(n);
-                }
-            if(band==true && Desaparece==false){
-                Regreso();
-                Com=0;                
+                if(!this.isTouching(Heroe.class))
+                    SonidoAtk.stop();
             }
-            int Band2=Greenfoot.getRandomNumber(50);
-            if(Band2==1 || Band2==25)
-                Com=1;
-                
-           
-    }}    
-/**
- * Este metodo sirve para que  el enimgo pueda atacar 
- * este enemigo usa animacionn al atacar 
- * utiliza un indice el cual ira cambiando las imagenes que estan guardadas
- * en la lista para animar 
- * y utila un move para poder moverse
- * regresa una bandera para que el enemigo pueda regreasar a su posicion original
- */
-    public void Ataque()
+            if(desaparece==false)
+                world.addObject(vida,500,600);
+            else if(desaparece==true) {
+                puntos=world.getObjects(Puntos.class);
+                Object puntuacion=puntos.get(0);
+                int punt=((Puntos)puntuacion).getPuntos();
+                world.removeObject(vida);
+                world.removeObject(this);
+                World nivel=new PantallaEspera(2,punt);
+
+                Greenfoot.setWorld(nivel);
+            }
+            if(bandAtaque==true && desaparece==false){
+                regreso();
+                comando=0;                
+            }
+            int numero=Greenfoot.getRandomNumber(50);
+            if(numero==1 || numero==25)
+                comando=1;
+
+        }}    
+    /**
+     * Este metodo sirve para que  el enimgo pueda atacar 
+     * este enemigo usa animacionn al atacar 
+     * utiliza un indice el cual ira cambiando las imagenes que estan guardadas
+     * en la lista para animar 
+     * y utila un move para poder moverse
+     * regresa una bandera para que el enemigo pueda regreasar a su posicion original
+     */
+    public void ataque()
     {
         int x=getX();
-        if(seg>1 && x>150)
+        if(segundo>1 && x>150)
         {
-            seg=System.currentTimeMillis();
-            setImage(Enem.get(i));
+            segundo=System.currentTimeMillis();
+            setImage(enemigo.get(indice));
             move(-50);
-            i++;
-            if(i==2)
-                i=0;
+            indice++;
+            if(indice==2)
+                indice=0;
             x++;
         }
         if(x==150)
-            band=true; 
+            bandAtaque=true; 
     }
+
     /**
      * Este metodo pone en la posicion original a este enemigo
      */
 
-    public void Regreso()
+    public void regreso()
     {
         int x=getX();
-        if(seg>1 && x<750 && band)
+        if(segundo>1 && x<750 && bandAtaque)
         {
 
-            setImage(Enem.get(0));
+            setImage(enemigo.get(0));
             move(100);
             x++;
         }
         else{
-            setImage(Enem.get(0));
+            setImage(enemigo.get(0));
             move(0);
-            band=false;
+            bandAtaque=false;
         }
     }
+
     /**
      * Este metodo regresa el ataque de este Enemigo
      * @return Atk ataque del enemigo
      */
     public int getAtk()
     {
-        return Atk;
+        return ataque;
     }
 
-    
 }

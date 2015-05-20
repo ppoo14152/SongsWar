@@ -12,28 +12,27 @@ import java.util.*;
  */
 public class Espadachin extends Heroe 
 {
-    private int Ataque;
-    private int DanoRes;
-    private int Def;
-    private int band;
-    private int band2;
-    private int i;
-    private int bandG;
-    private LinkedList<GreenfootImage> HAtk;
-    private GreenfootImage Atk01;
-    private GreenfootImage Atk02;
-    private GreenfootImage Atk03;
-    private GreenfootImage Def01;
-    private Vida v;
-    private long seg;
-    private int CoorX;
+    private int ataque;
+    private int danoRecibido;
+    private int defensa;
+    private int bandAtaque;
+    private int bandRegreso;
+    private int iterador;    
+    private LinkedList<GreenfootImage> heroAtaque;
+    private GreenfootImage ataque01;
+    private GreenfootImage ataque02;
+    private GreenfootImage ataque03;
+    private GreenfootImage defensa01;
+    private Vida vida;
+    private long segundo;
+    private int coorX;
     private int movimiento;
-    private boolean Desaparece;
-    private int band3;
-    private World w;
-    private GreenfootSound Golpe;
+    private boolean desaparece;
+    private int bandDano;
+    private World world;
+    private GreenfootSound golpe;
 
-    private List M;
+    private List muroList;
 
     /**
      * Constructor de Espadachin 
@@ -43,90 +42,88 @@ public class Espadachin extends Heroe
      */
     public Espadachin()
     {
-        Ataque=20;
-        DanoRes=0;
-        Def=50;
-        band=0;
-        band2=0;
-        i=0;
-        bandG=0;
-        band3=0;
-        CoorX=450;
+        ataque=20;
+        danoRecibido=0;
+        defensa=50;
+        bandAtaque=0;
+        bandRegreso=0;
+        iterador=0;
+        
+        bandDano=0;
+        coorX=450;
         movimiento=20;
-        v=new Vida(800);
-        HAtk=new LinkedList<GreenfootImage>();
-        HAtk.add(Atk01=new GreenfootImage("Atack01.png"));
-        HAtk.add( Atk02=new GreenfootImage("Atack02.png"));
-        HAtk.add(Atk03=new GreenfootImage("Atack03.png"));
-        Def01=new GreenfootImage("Def01.png");
-        Golpe=new GreenfootSound("golpe_A_Heroe.mp3");
-        seg=System.currentTimeMillis();
+        vida=new Vida(800);
+        heroAtaque=new LinkedList<GreenfootImage>();
+        heroAtaque.add(ataque01=new GreenfootImage("Atack01.png"));
+        heroAtaque.add( ataque02=new GreenfootImage("Atack02.png"));
+        heroAtaque.add(ataque03=new GreenfootImage("Atack03.png"));
+        defensa01=new GreenfootImage("defensa01.png");
+        golpe=new GreenfootSound("golpe_A_Heroe.mp3");
+        segundo=System.currentTimeMillis();
 
     }
 
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
-        w=getWorld();
+        world=getWorld();
 
-        band=super.setCom();
-        M=w.getObjects(Muro.class);
+        bandAtaque=super.setCom();
+        muroList=world.getObjects(Muro.class);
         if(super.getComando()==1){  
-            band2=Ataque();
-            band3=0;
+            bandRegreso=ataque();
+            bandDano=0;
             super.getTouch();}
-        if(band2==1){
+        if(bandRegreso==1){
             setReg(true);
-            band2=0;}
+            bandRegreso=0;}
 
         if(super.getComando()==2){
-            band3=1;
-            Def();
+            bandDano=1;
+            defensa();
         }
         if(super.getComando()==3){
 
             Regreso();
         }
         /*if(this.isTouching(Llama.class) || this.isTouching(Garra.class)){
-            band3=0;}
+            bandDano=0;}
         else
-            band3=1;*/
+            bandDano=1;*/
 
-        if(this.isTouching(Enemigo.class) && band3!=1){
-            Golpe.play();
-            DanoRes=super.restaSalud(Def);
-            Desaparece=v.reduce(DanoRes,v.getImage(),1);
+        if(this.isTouching(Enemigo.class) && bandDano!=1){
+            golpe.play();
+            danoRecibido=super.restaSalud(defensa);
+            desaparece=vida.reduce(danoRecibido,vida.getImage(),1);
             super.setDano(0);
-            //System.out.println(DanoRes);
+            //System.out.println(danoRecibido);
         }
         if(!this.isTouching(Enemigo.class));
-        Golpe.stop();
-        if(Desaparece==false)
-            w.addObject(v,100,220);
+        golpe.stop();
+        if(desaparece==false)
+            world.addObject(vida,100,220);
         else
-        if(Desaparece==true)
-            System.out.println(bandG);
-        if(Desaparece==true){
-            w.removeObject(v);
+           if(desaparece==true){
+            world.removeObject(vida);
 
-            w.removeObject(this);
+            world.removeObject(this);
 
             
         }     
-        if(M.isEmpty())
+        if(muroList.isEmpty())
         {
             movimiento=40;   
-            CoorX=600;
+            coorX=600;
         }
 
     }
 
     /**
-     * @return Ataque regresa el ataque de este heroe
+     * @return ataque regresa el ataque de este heroe
      */
     public int getAtk()
     {
-        return Ataque;
+        return ataque;
     }
 
     /**
@@ -135,38 +132,38 @@ public class Espadachin extends Heroe
      * usa las listas y un indice 
      * para poder ir cambiando las imagenes
      * ademas de regresar una bandera para poder regresar al heroe a sus estado original
-     * @return band2 una bandera
+     * @return bandRegreso una bandera
      */
-    public int Ataque()
+    public int ataque()
     {  
         int x=getX();
-        if(seg>1 && x<CoorX){
-            seg=System.currentTimeMillis();
+        if(segundo>1 && x<coorX){
+            segundo=System.currentTimeMillis();
 
-            setImage(HAtk.get(i));
+            setImage(heroAtaque.get(iterador));
             move(movimiento);
-            i++;
-            if(i==2)
-                i=0;
+            iterador++;
+            if(iterador==2)
+                iterador=0;
             x++;
         }
         else
         {
-            setImage(HAtk.get(2));
+            setImage(heroAtaque.get(2));
             move(0);
-            band2=1;                 
+            bandRegreso=1;                 
         }
 
-        return band2;
+        return bandRegreso;
 
     }
 
     /**
      * coloca la imagen para la defensa
      */
-    public void Def()
+    public void defensa()
     {
-        setImage(Def01);
+        setImage(defensa01);
     }
 
     /**
@@ -177,7 +174,7 @@ public class Espadachin extends Heroe
     {   
 
         setLocation(250,500);
-        setImage(Atk01);
+        setImage(ataque01);
 
     }
 }

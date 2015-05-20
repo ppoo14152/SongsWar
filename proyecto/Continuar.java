@@ -13,55 +13,55 @@ public class Continuar extends Boton
      * Act - hace lo que Continuar quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
-    private int Nivel;
-    private World w;
-    private List puntos;
-    private int p;
+    private int nivel;
+    private World world;
+    private List puntosList;
+    private int puntuacion;
     /**
      * Constructor de Continuar, recibe una variable para poder seleccionar que nivel sigue 
      * a ejecutar
      * @param n es el nivel  siguiente
      * @param punt en el puntaje acumulado
      */
-    public Continuar(int n,int punt)
-    
+    public Continuar(int num,int punt)
+
     {
-        p=punt;
-        Nivel=n;
+        puntuacion=punt;
+        nivel=num;
     }
 
     public void act() 
     {
-        w=getWorld();
-       System.out.println(p);
+        world=getWorld();
+
         if(Greenfoot.mouseClicked(this))
         {
 
-            if(Nivel==1){
-                w=new Nivel1(0);
-                Greenfoot.setWorld(w);
-                w.showText("Nivel 1",400,560);}}
-        if(Greenfoot.mouseClicked(this))
-        {
-            
-            if(Nivel==2){
-                
-                
-                
-                w=new Nivel2(p);
-                Greenfoot.setWorld(w);
-            w.showText("Nivel 2",400,560);}}
+            if(nivel==1){
+                world=new Nivel1(0);
+                Greenfoot.setWorld(world);
+                world.showText("Nivel 1",400,560);}}
         if(Greenfoot.mouseClicked(this))
         {
 
-            if(Nivel==3){
-                 puntos=w.getObjects(Puntos.class);
+            if(nivel==2){
 
+                
+                world=new Nivel2(puntuacion);
+                Greenfoot.setWorld(world);
+                world.showText("Nivel 2",400,560);}}
+        if(Greenfoot.mouseClicked(this))
+        {
+
+            if(nivel==3){
+                puntosList=world.getObjects(Puntos.class);
 
         
-                w=new Nivel3(p);
-                Greenfoot.setWorld(w);
-            w.showText("Nivel 3",400,560);}}
+                world=new Nivel3(puntuacion);
+                Greenfoot.setWorld(world);
+                world.showText("Nivel 3",400,560);
+            }
+        }
 
     }
 }

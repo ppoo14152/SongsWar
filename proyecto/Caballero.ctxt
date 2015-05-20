@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Caballero()
-comment0.text=\r\n\ Constructor\ de\ Caballero\ \r\n\ aqui\ se\ definen\ el\ ataque\ la\ defensa\ ,y\ las\ banderas\ que\ ayudan\ a\ ejecutar\ las\ acciones\r\n\ ademas\ de\ cargar\ las\ listas\ con\ imagenes\ para\ la\ animacion\r\n
+comment0.text=\r\n\ Constructor\ de\ Caballero\ \r\n\ aqui\ se\ definen\ el\ ataque\ la\ defensa\ ,y\ las\ banderas\ que\ ayudan\ a\ eindiceJecutar\ las\ acciones\r\n\ ademas\ de\ cargar\ las\ listas\ con\ imagenes\ para\ la\ animacion\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
-comment2.target=int\ Ataque()
-comment2.text=\r\n\ en\ este\ metodo\ se\ utiliza\ para\ poder\ hacer\ la\ animacio\ de\ movimiento\ y\ que\ se\ ejecute\ \r\n\ el\ movimiento\ hacia\ el\ enmmigo,\ las\ animaciones\ de\ hiran\ poniendo\ de\ forma\ automatica\ segun\r\n\ vaya\ avanzando\r\n\ @return\ band2\r\n
+comment2.target=int\ ataque()
+comment2.text=\r\n\ en\ este\ metodo\ se\ utiliza\ para\ poder\ hacer\ la\ animacio\ de\ movimiento\ y\ que\ se\ eindiceJecute\ \r\n\ el\ movimiento\ hacia\ el\ enmmigo,\ las\ animaciones\ de\ hiran\ poniendo\ de\ forma\ automatica\ segun\r\n\ vaya\ avanzando\r\n\ @return\ bandAtaque\r\n
 comment3.params=
 comment3.target=int\ getAtk()
-comment3.text=\r\n\ @return\ Ataque\ regresa\ el\ ataque\ de\ este\ heroe\r\n
+comment3.text=\r\n\ @return\ ataque\ regresa\ el\ ataque\ de\ este\ heroe\r\n
 comment4.params=
-comment4.target=void\ Regreso()
+comment4.target=void\ regreso()
 comment4.text=\r\n\ coloca\ a\ su\ posicion\ original\ este\ heroe\r\n
 comment5.params=
-comment5.target=void\ Def()
+comment5.target=void\ defensa()
 comment5.text=\r\n\ coloca\ la\ imagen\ para\ la\ defensa\ \r\n
 numComments=6

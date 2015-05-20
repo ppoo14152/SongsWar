@@ -1,4 +1,5 @@
 #BlueJ class context
 comment0.params=score
 comment0.target=Nivel3(int)
+comment0.text=\r\n\ Constructor\ para\ objetos\ de\ clase\ Nivel3.\r\n\ \ en\ ella\ se\ colocan\ todos\ lo\ elementos\ que\ estaran\ en\ el\ mundo\ en\ el\ nivel\ 3\r\n\ \r\n\ @param\ recibe\ como\ parametro\ la\ puntuacion\ acumulada\r\n
 numComments=1

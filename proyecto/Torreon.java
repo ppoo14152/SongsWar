@@ -9,45 +9,45 @@ import greenfoot.*;
  */
 public class Torreon extends Muro
 {
-    private int Resistencia;
-    private int Dano;
-    private Vida v;
-    private Actor heroAtk;
-    private boolean Desaparece;
-    private World w;
+    private int resistencia;
+    private int dano;
+    private Vida vida;
+    private Actor heroAtaque;
+    private boolean desaparece;
+    private World world;
     /**
      * Constructor de Torreon 
      * aqui se definen las variables de instancia
      */
     public Torreon()
     {
-        Resistencia=50;
-        Dano=0;
-        heroAtk=new Heroe();
-        v=new Vida(1500);
+        resistencia=50;
+        dano=0;
+        heroAtaque=new Heroe();
+        vida=new Vida(1500);
 
-        Desaparece=false;
+        desaparece=false;
 
     }
 
     public void act() 
     {
-        World w=getWorld();
+        World world=getWorld();
 
-        if(Resistencia>99)
-            w.addObject(v,500,500);
+        if(resistencia>99)
+            world.addObject(vida,500,500);
         if(this.isTouching(Heroe.class)){
             super.setRes(100);
-            Dano=super.restaSalud();
+            dano=super.restaSalud();
 
-            Desaparece=v.reduce(Dano,v.getImage(),1);
+            desaparece=vida.reduce(dano,vida.getImage(),1);
 
             super.setDano(0);
-            if(Desaparece==false)
-                w.addObject(v,500,600);
-            else if(Desaparece==true){
-                w.removeObject(v);
-                w.removeObject(this);
+            if(desaparece==false)
+                world.addObject(vida,500,600);
+            else if(desaparece==true){
+                world.removeObject(vida);
+                world.removeObject(this);
             }
         }
     }

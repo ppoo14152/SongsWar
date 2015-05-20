@@ -18,7 +18,7 @@ public class Nivel3 extends World
      * 
      * @param recibe como parametro la puntuacion acumulada
      */
-    private GreenfootSound music;
+ 
     public Nivel3(int score)
     {    
        super(900, 700, 1); 

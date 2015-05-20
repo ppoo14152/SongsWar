@@ -10,10 +10,10 @@ import greenfoot.*;
  */
 public class Muro extends Actor
 {
-    private int Resistencia;
-    private int DanoTotal;
-    private int Dano;
-    private Actor heroAtk;
+    private int resistencia;
+    private int danoTotal;
+    private int dano;
+    private Actor heroAtaque;
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
@@ -26,10 +26,10 @@ public class Muro extends Actor
      */
     public Muro ()
     {
-        Resistencia=0; 
-        DanoTotal=0;
-        Dano=0;
-        heroAtk=new Heroe();
+        resistencia=0; 
+        danoTotal=0;
+        dano=0;
+        heroAtaque=new Heroe();
     }    
 
     /**
@@ -44,37 +44,37 @@ public class Muro extends Actor
         String NombreClass;
 
         //V.reduceVid(DanoTotal);
-        heroAtk=getOneIntersectingObject(Heroe.class);
-        NombreClass=heroAtk.getClass().getName();
+        heroAtaque=getOneIntersectingObject(Heroe.class);
+        NombreClass=heroAtaque.getClass().getName();
         if(NombreClass== "Espadachin"){
-            Dano=((Espadachin)heroAtk).getAtk();
+            dano=((Espadachin)heroAtaque).getAtk();
             NombreClass=null;
         }
         if(NombreClass=="Caballero"){
-            Dano=((Caballero)heroAtk).getAtk();
+            dano=((Caballero)heroAtaque).getAtk();
             NombreClass=null;}
         if(NombreClass=="Flecha"){
-            Dano=((Arquero)heroAtk).getAtk();
+            dano=((Arquero)heroAtaque).getAtk();
             NombreClass=null;}
-        DanoTotal=Resistencia-Dano;
+        danoTotal=resistencia-dano;
 
-        return DanoTotal;
+        return danoTotal;
     }
 
     /**
      * este metodo coloca el nuevo daño 
-     * @param Dano recibe un nuevo daño
+     * @param dano recibe un nuevo daño
      */
-    public void setDano(int Dano)
+    public void setDano(int dano)
     {
-        DanoTotal=Dano;
+        danoTotal=dano;
     }
 
     /**
      * Este metodo coloca la nueva resistenciaa 
      */
-    public  void setRes(int R)
+    public  void setRes(int r)
     {
-        Resistencia=R;
+        resistencia=r;
     }
 }

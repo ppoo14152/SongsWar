@@ -1,10 +1,5 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment1.params=
-comment1.target=Llama()
-comment1.text=\r\n\ constructor\ de\ Llama\ \r\n\ aqui\ se\ cargan\ las\ lista\ con\ sus\ respectivas\ imagenes\ \r\n
-comment2.params=
-comment2.target=void\ Image()
-comment2.text=\r\n\ seleccionea\ \r\n\ las\ imagenes\ para\ la\ animacion\r\n
-numComments=3
+comment0.text=\r\n\ Act\ -\ hace\ lo\ que\ Llama\ quiere\ hacer.\ Este\ m\u00E9todo\ se\ llama\ "cuando\ quiera"\ o\ whenever\r\n\ los\ botones\ 'Actuar\ or\ 'Ejecutar'\ son\ presionados\ en\ el\ entorno.\r\n
+numComments=1

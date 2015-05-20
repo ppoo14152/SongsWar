@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * Solo se coloca este mundo si los tres 
  * Heroes se han eliminado del mundo anterior
- * 
+ * Solo muestra una imagen de Game Over al momento de llamarla
  * @autor Omar Agustin Valadez Hernandes 
  * @versión Mayo 2015
  */

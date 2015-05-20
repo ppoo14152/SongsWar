@@ -13,22 +13,19 @@ import java.util.*;
 public class Heroe extends Actor 
 {
     private int comando;
-    private int a=0;
-    private int b=0;
-    private int c=0;
-    private int Atk;
-    private Comando imgCom;
-    private World w;
-    
-    private int i;
-    private Actor eneAtk;
-    private int Dano;
-    private int DanoTotal;
-    private boolean Reg;
-    private int band;
-    private boolean band2;
-    private int Resistencia;
-    private List H;
+    private int condicionA=0;
+    private int condicionB=0;
+    private int condicionC=0;
+    private int ataque;
+    private Comando imgComando;
+    private World world;
+    private Actor eneAtaque;
+    private int dano;
+    private int danoTotal;
+    private boolean regreso;
+    private int bandComando;
+    private int resistencia;
+   
     /**
      * Constructor de Heroe  
      * aqui se definen las variables principales como el comando 
@@ -37,13 +34,10 @@ public class Heroe extends Actor
     public void Heroe()
     { 
         comando=0;
-        imgCom=new Comando();
-        Reg=false;
-        eneAtk=new Enemigo();
-        Dano=0;
-        Resistencia=0;
-
-        i=0;
+        regreso=false;
+        eneAtaque=new Enemigo();
+        dano=0;
+        resistencia=0;
     }
 
     public void act() 
@@ -59,56 +53,56 @@ public class Heroe extends Actor
     public int setCom()
     { 
         //Comando ataque qer
-        String Tecla;
-        Tecla=Greenfoot.getKey();
         if(Greenfoot.isKeyDown("q"))
-            a=1;
-        if(a==1){
+            condicionA=1;
+        if(condicionA==1){
             if(Greenfoot.isKeyDown("w"))
-                b=1;
+                condicionB=1;
             if(Greenfoot.isKeyDown("e"))
-                c=1;
-            if(a==1 && b==0 && c==1){
+                condicionC=1;
+            if(condicionA==1 && condicionB==0 && condicionC==1){
                 if(Greenfoot.isKeyDown("r"))
 
                     comando=1;
-                band=1;
-                a=0;
-                b=0;
-                c=0;
+                bandComando=1;
+                condicionA=0;
+                condicionB=0;
+                condicionC=0;
 
-            }}                
+            }
+        }                
         if(Greenfoot.isKeyDown("w")){
-            b=2;
-            if(b==2){
+            condicionB=2;
+            if(condicionB==2){
                 if(Greenfoot.isKeyDown("r")){
-                    c=2;
-                    a=2;}
+                    condicionC=2;
+                    condicionA=2;}
                 if(Greenfoot.isKeyDown("e"))
-                    a=0;
+                    condicionA=0;
                 if(Greenfoot.isKeyDown("q"))
 
                     comando=2;
-                a=0;
-                b=0;
-                c=0;
+                condicionA=0;
+                condicionB=0;
+                condicionC=0;
             }}
         if(Greenfoot.isKeyDown("space")){
             comando=5;
-            a=0;
-            b=0;
-            c=0;
+            condicionA=0;
+            condicionB=0;
+            condicionC=0;
 
         }
 
         if(!Greenfoot.isKeyDown("r")){
-            band=3;
+            bandComando=3;
         }
 
-        if(Reg==true){
+        if(regreso==true){
             comando=3;
-            Reg=false;}
-        return band;
+            regreso=false;
+        }
+        return bandComando;
 
     }
 
@@ -120,20 +114,20 @@ public class Heroe extends Actor
      * @param Resistencia
      * @return DaanoTotal
      */
-    public int restaSalud(int Resistencia)
+    public int restaSalud(int resistencia)
     {
         String NombreClass;
-        eneAtk=getOneIntersectingObject(Enemigo.class);
-        NombreClass=eneAtk.getClass().getName();
+        eneAtaque=getOneIntersectingObject(Enemigo.class);
+        NombreClass=eneAtaque.getClass().getName();
         if(NombreClass== "Coloso"){
-            Dano=((Coloso)eneAtk).getAtk();}
+            dano=((Coloso)eneAtaque).getAtk();}
 
         if(NombreClass=="Kraken"){
-            Dano=((Kraken)eneAtk).getAtk();
+            dano=((Kraken)eneAtaque).getAtk();
         }   
 
-        DanoTotal=Resistencia-Dano;        
-        return DanoTotal;
+        danoTotal=resistencia-dano;        
+        return danoTotal;
     }
 
     /**
@@ -153,22 +147,22 @@ public class Heroe extends Actor
      */
     public boolean getReg()
     {
-        return Reg;
+        return regreso;
     }
 
     /**
      *@param R se coloca una nueva bandera
      */
-    public void setReg(boolean R)
+    public void setReg(boolean r)
     {
-        Reg=R;
+        regreso=r;
     }
     /**
      * @return band regresa una bandera
      */
     public int getBand()
     {
-        return band;
+        return bandComando;
     }
     /**
      * @return comando regresa el comando establecido
@@ -182,7 +176,7 @@ public class Heroe extends Actor
      */
     public void setDano(int d)
     {
-        DanoTotal=d;
+        danoTotal=d;
     }
 
 

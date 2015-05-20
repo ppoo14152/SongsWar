@@ -17,36 +17,35 @@ import java.util.*;
  */
 public class Dragon extends Enemigo
 {
-    private GreenfootImage Dragon1;//imagen
-    private GreenfootImage Dragon2;
-    private GreenfootImage Dragon3;
-    private GreenfootImage Dragon4;
+    private GreenfootImage dragon1;//imagen
+    private GreenfootImage dragon2;
+    private GreenfootImage dragon3;
+    private GreenfootImage dragon4;
 
-    private LinkedList<GreenfootImage> imgRep;//lista para la animacion en reposo
+    private LinkedList<GreenfootImage> imgReposo;//lista para la animacion en reposo
 
     private Garra garra;
     private Llama llama;
-    private World w;//mundo para obetener actores de el
-    private World n;//mundo para crear un nuevo nivel
-    private World g;//mundo para dar un game over
-    private Vida v;//vida
-    private Heroe h;//heroe
-    private long seg;
+    private World world;//mundo para obetener actores de el
+    
+    private Vida vida;//vida
+    private Heroe heroe;//heroe
+    private long segundo;
     private boolean band;//banderas
-    private boolean band2;
-    private boolean band3;
-    private boolean band4;
-    private boolean Desaparece;
-    private int i;//contadores o indices para la animcaion
-    private int j;
-    private int k;
-    private int Dano;
-    private int Atk;
-    private int Def;//defensa
-    private List M;//listas para guardar actores
-    private List l;
-    private List H;
-    private Flecha f;//flecha
+    private boolean bandLugar;
+    
+    private boolean bandAtaque;
+    private boolean desaparece;
+    private int identificadorI;//contadores o indices para la animcaion
+    private int identificadorJ;
+    private int identificadorK;
+    private int dano;
+    private int ataque;
+    private int defensa;//defensa
+    private List muro;//listas para guardar actores
+    private List llamaList;
+    private List heroeLista;
+    private Flecha flecha;//flecha
     private GreenfootSound SonidoAtk;
     /**
      * Constructor Dragon en el se definen el ataque la defensa y se 
@@ -56,84 +55,88 @@ public class Dragon extends Enemigo
      */
     public Dragon()
     {
-        Atk=1;
-        Def=150;
-        Dano=0;
-        v=new Vida(2000);
-        h=new Heroe();
-        f=new Flecha();
+        ataque=1;
+        defensa=150;
+        dano=0;
+        vida=new Vida(2000);
+        heroe=new Heroe();
+        flecha=new Flecha();
         llama=new Llama();
-        imgRep=new LinkedList<GreenfootImage>();
+        imgReposo=new LinkedList<GreenfootImage>();
         garra=new Garra();
-        imgRep.add(Dragon1=new GreenfootImage("Dragon01.png"));
-        imgRep.add(Dragon2=new GreenfootImage("Dragon01.png"));
-        imgRep.add(Dragon3=new GreenfootImage("Dragon02.png"));
-        imgRep.add(Dragon4=new GreenfootImage("Dragon02.png"));
-        i=0;
-        j=0;
-        k=0;
+        imgReposo.add(dragon1=new GreenfootImage("Dragon01.png"));
+        imgReposo.add(dragon2=new GreenfootImage("Dragon01.png"));
+        imgReposo.add(dragon3=new GreenfootImage("Dragon02.png"));
+        imgReposo.add(dragon4=new GreenfootImage("Dragon02.png"));
+        identificadorI=0;
+        identificadorJ=0;
+        identificadorK=0;
         SonidoAtk=new GreenfootSound("golpear_7.mp3");
-        seg=System.currentTimeMillis();
+        segundo=System.currentTimeMillis();
 
     }
 
     public void act() 
     {
-        w=getWorld();
-        H=w.getObjects(Heroe.class);
-        g=new GameOver();
+        world=getWorld();
+        heroeLista=world.getObjects(Heroe.class);
+      
         int y=getY();
         int x=getX();
 
-        M=w.getObjects(Muro.class);
-        l=w.getObjects(Llama.class);
-        int bandR=h.setCom();
-        if(H.isEmpty())
-            Greenfoot.setWorld(g);
-        if(seg>1 ){
-            seg=System.currentTimeMillis();
-            setImage(imgRep.get(i));
-            i++;
+        muro=world.getObjects(Muro.class);
+        llamaList=world.getObjects(Llama.class);
+        int bandRegreso=heroe.setCom();
+        if(heroeLista.isEmpty()){
 
-            if(i==4)
-                i=0;}
-        if(M.isEmpty()==false);
-        else if(M.isEmpty()){
+        
+            World gameO=new GameOver();
+            Greenfoot.setWorld(gameO);
+        }
+        if(segundo>1 ){
+            segundo=System.currentTimeMillis();
+            setImage(imgReposo.get(identificadorI));
+            identificadorI++;
+
+            if(identificadorI==4)
+                identificadorI=0;}
+        if(muro.isEmpty()==false);
+        else if(muro.isEmpty()){
             if(y<500){
                 y=y+5;
 
                 setLocation(getX(),y);
             }
-            band4=Ataque();
+            bandAtaque=ataque();
         }
         if(this.isTouching(Flecha.class)){
-            band4=true;
-            System.out.println(band4);}
+            bandAtaque=true;
+           }
         else
-            band4=false;
-        if(band4==true){
+            bandAtaque=false;
+        if(bandAtaque==true){
             ///Dano=super.restaSalud(Def);
-            Desaparece=v.reduce(Dano,v.getImage(),1);}
+            desaparece=vida.reduce(dano,vida.getImage(),1);}
         else if(this.isTouching(Heroe.class) ){
             SonidoAtk.play(); 
-            if(bandR==1){
-                Dano=super.restaSalud(Def);
-                Desaparece=v.reduce(Dano,v.getImage(),1);
+            if(bandRegreso==1){
+                dano=super.restaSalud(defensa);
+                desaparece=vida.reduce(dano,vida.getImage(),1);
             }
             if(!this.isTouching(Heroe.class))
                 SonidoAtk.stop();
         }       
 
-        seg=System.currentTimeMillis();
-        if(Desaparece==false)
-            w.addObject(v,500,600);
-        else if(Desaparece==true){
-            w.removeObject(v);
-            w.removeObject(this);
-            w.removeObject(llama);
-            w.removeObject(garra);
-            n=new puntaje();
-            Greenfoot.setWorld(n);}
+        segundo=System.currentTimeMillis();
+        if(desaparece==false)
+            world.addObject(vida,500,600);
+        else if(desaparece==true){
+            world.removeObject(vida);
+            world.removeObject(this);
+            world.removeObject(llama);
+            world.removeObject(garra);
+            World nivel=new Puntaje();
+            Greenfoot.setWorld(nivel);}
         y++;
 
     }  
@@ -144,24 +147,24 @@ public class Dragon extends Enemigo
      * regresa una bandera que el enemigo usara para saber si esta tocando una flecha o no 
      * 
      * */
-    public boolean Ataque()
+    public boolean ataque()
     {
         int num=Greenfoot.getRandomNumber(15);
         switch(num)
         {
-            case 1: band2=AtaqueGarra();
-            if(band2==true){
+            case 1: bandLugar=ataqueGarra();
+            if(bandLugar==true){
                 setLocation(600,500);
-                band2=false;}
+                bandLugar=false;}
             break;
-            case 8: band2=AtaqueLlama();
-            if(band2==true){
+            case 8: bandLugar=ataqueLlama();
+            if(bandLugar==true){
                 setLocation(600,500);
-                band2=false;}
+                bandLugar=false;}
             default:
 
         }
-        return band2;
+        return bandLugar;
     }
 
     /**
@@ -173,18 +176,18 @@ public class Dragon extends Enemigo
      *
      */
 
-    public boolean AtaqueLlama()
+    public boolean ataqueLlama()
     {     if(getY()==500){
-            w.addObject(llama,300,getY());
+            world.addObject(llama,300,getY());
             llama.setLocation(300,getY());
-            llama.Image();
+           
             move(-70);
             llama.move(-50);
             int x=getX();
 
             if(x<500){
 
-                w.removeObject(llama);
+                world.removeObject(llama);
                 return true;
             }}
         return false;
@@ -198,17 +201,17 @@ public class Dragon extends Enemigo
      *
      */
 
-    public boolean AtaqueGarra()
+    public boolean ataqueGarra()
     {
         if(getY()==500){
-            w.addObject(garra,300,getY());
+            world.addObject(garra,300,getY());
             garra.setLocation(300,getY());
             move(-70);
             int x=getX();
             System.out.println(x);
             if(x<500){
 
-                w.removeObject(garra);
+                world.removeObject(garra);
                 return true;
             }}
         return false;
@@ -220,7 +223,7 @@ public class Dragon extends Enemigo
      */
     public int getAtk()
     {
-        return Atk;
+        return ataque;
     }
 
 }

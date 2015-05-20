@@ -11,7 +11,6 @@ import java.util.*;
  */
 public class Nivel1 extends World
 {
-private GreenfootSound music;
     /**
      * Constructor para objetos de clase Nivel 1 
      * en ella se colocan todos lo elementos que estaran en el mundo en el nivel 1
@@ -23,30 +22,30 @@ private GreenfootSound music;
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
         super(900, 700, 1); 
         
-        Heroe es=new Espadachin();
-        Heroe cab=new Caballero();
-        Heroe ar=new Arquero();
-        Muro p=new Pared();
-        Flecha f=new Flecha();
+        Heroe espadachin=new Espadachin();
+        Heroe caballo=new Caballero();
+        Heroe arquero=new Arquero();
+        Muro pared=new Pared();
+        Flecha flecha=new Flecha();
               
-        Enemigo enem=new Coloso();
-        Comando com=new Comando();
-        Puntos punt=new Puntos(score);
+        Enemigo enemigo=new Coloso();
+        Comando comando=new Comando();
+        Puntos puntaje=new Puntos(score);
         showText("Ataque",50,50);
         showText("Q-E-R",50,70);
         showText("Defensa",50,100);
         showText("W-E-Q",50,120);
-        score=punt.getPuntos();
+        score=puntaje.getPuntos();
         
         
-        addObject(f,150,500);        
-        addObject(punt,100,200);
-        addObject(com,550,100);
-        addObject(p,550,500);
-        addObject(cab,200,500);
-        addObject(es,250,500);
-        addObject(ar,150,500);
-        addObject(enem,750,500);
+        addObject(flecha,150,500);        
+        addObject(puntaje,100,200);
+        addObject(comando,550,100);
+        addObject(pared,550,500);
+        addObject(caballo,200,500);
+        addObject(espadachin,250,500);
+        addObject(arquero,150,500);
+        addObject(enemigo,750,500);
         
        
         

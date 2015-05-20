@@ -10,16 +10,16 @@ import greenfoot.*;
  */
 public class Enemigo extends Actor
 {
-    private Actor heroAtk;
-    private int DanoEs;
-    private int DanoCab;
-    private int DanoAr;
-    private int DanoTotal;
-    private int Resistencia;
+    private Actor heroAtaque;
+    private int danoEspadachin;
+    private int danoCaballero;
+    private int danoTotal;
+    private int resistencia;
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
     } 
+
     /**
      * Constructor de clase Enemigo 
      * Se definen las  variables de instanci
@@ -30,12 +30,11 @@ public class Enemigo extends Actor
     public Enemigo()
     {
 
-        heroAtk=new Heroe();
-        DanoEs=0;
-        DanoCab=0;
-        DanoAr=0;
-        DanoTotal=0;
-        Resistencia=0;
+        heroAtaque=new Heroe();
+        danoEspadachin=0;
+        danoCaballero=0;
+        danoTotal=0;
+        resistencia=0;
     }
 
     /**
@@ -45,23 +44,23 @@ public class Enemigo extends Actor
      * se captura el nombre de la clse que se intersecciona y de acuerdo a el se añande un daño 
      * el cual se restara
      */
-    public int restaSalud(int Resistencia)
+    public int restaSalud(int resistencia)
     {
         String NombreClass;
 
-        heroAtk=getOneIntersectingObject(Heroe.class);
-        NombreClass=heroAtk.getClass().getName();
+        heroAtaque=getOneIntersectingObject(Heroe.class);
+        NombreClass=heroAtaque.getClass().getName();
 
         if(NombreClass== "Espadachin"){
-            DanoEs=((Espadachin)heroAtk).getAtk();
+            danoEspadachin=((Espadachin)heroAtaque).getAtk();
 
         }
         if(NombreClass=="Caballero"){
-            DanoCab=((Caballero)heroAtk).getAtk();
+            danoCaballero=((Caballero)heroAtaque).getAtk();
         }
-        DanoTotal=Resistencia-DanoEs-DanoCab;        
+        danoTotal=resistencia-danoEspadachin-danoCaballero;        
         System.out.println(NombreClass);
-        return DanoTotal;
+        return danoTotal;
     }
 
     /**
@@ -69,8 +68,8 @@ public class Enemigo extends Actor
      * @param Resibe com parametro una ueva resistencia
      */
 
-    public void setResistencia(int Res)
+    public void setResistencia(int res)
     {
-        Resistencia=Res;
+        resistencia=res;
     }
 }

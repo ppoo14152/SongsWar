@@ -14,44 +14,44 @@ public class Flecha extends Actor
      * Act - hace lo que Flecha quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
-    private Arquero h;
-    private Heroe h1;
-    private int Atk;
-    private int Com;
-    private List Arq;
-    private World w;
+    private Arquero arquero;
+    private Heroe heroe;
+    private int ataque;
+    private int comando;
+    private List arqueroList;
+    private World world;
     /**
      * Constructor de Flecha , define las variables de instancia
      */
     public Flecha()
     {
-        h=new Arquero();
-        h1=new Heroe();
-        Atk=0;
-        Com=0;
+        arquero=new Arquero();
+        heroe=new Heroe();
+        ataque=0;
+        comando=0;
     }
     public void act() 
     {
-        w=getWorld();
-        Arq=w.getObjects(Arquero.class);
+        world=getWorld();
+        arqueroList=world.getObjects(Arquero.class);
         int x=getX();
-       Com=h1.setCom();
-       if(Com==1)
-       {    Atk=h.getAtk();
+       comando=heroe.setCom();
+       if(comando==1)
+       {    ataque=arquero.getAtk();
             move(250);
             
         }
         if(x>750)
         setLocation(150,500);
         x++;
-        if(Arq.isEmpty())
-        w.removeObject(this);
+        if(arqueroList.isEmpty())
+        world.removeObject(this);
     }   
     /**
      * @return Atk regresa el ataque del arquero
      */
     public int getAtk()
     {
-        return Atk;
+        return ataque;
     }
 }

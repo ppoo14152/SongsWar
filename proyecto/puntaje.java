@@ -9,7 +9,7 @@ import greenfoot.*;
  * @autor Omar Agustin Valadez Hernandez 
  * @versión Mayo de 2015
  */
-public class puntaje extends World
+public class Puntaje extends World
 {
 
     /**
@@ -17,13 +17,13 @@ public class puntaje extends World
      * Se declara un score board  y se añanade al mundo
      */
     private Boton back;
-    public puntaje()
+    public Puntaje()
     {    
         // Crea un nuevo mundo de 600x400 celdas con un tamaño de celda de 1x1 pixeles.
         super(800, 600, 1); 
-        ScoreBoard sp=new ScoreBoard(500,300);
+        ScoreBoard puntaje=new ScoreBoard(500,300);
         back=new Back();
         addObject(back,600,600);
-        addObject(sp,400,300);
+        addObject(puntaje,400,300);
     }
 }

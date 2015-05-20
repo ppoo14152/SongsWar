@@ -9,8 +9,8 @@ import java.util.*;
    */
 public class Vida extends Actor
 {
-   private boolean band;
-   private Vida V;
+   
+   private Vida vida;
    private Color color;
    
     public void act() 
@@ -34,23 +34,23 @@ public class Vida extends Actor
      * Coloca una nueva imagen con un tamaño nuevo para poder hacer que se reduca la vida 
      * @param dano se usa para darle un nuevvo  tamaño a la vida
      * @param img recibe la imagen a la cual se va a redefinir 
-     * @param c el un indice para colocar el color
+     * @param num el un indice para colocar el color
      * @return boolean regresa  un booleano para indicar si se debe de remover este objeto o no
      */
-    public boolean reduce(int dano,GreenfootImage img,int c )
+    public boolean reduce(int dano,GreenfootImage img,int num )
     {   
-        int vid=(img.getWidth())-dano;
-        if(c==1)
+        int vitalidad=(img.getWidth())-dano;
+        if(num==1)
         color=Color.GREEN;
-        if(c==2)
+        if(num==2)
         color=Color.YELLOW;
-            if(vid>0){
-                System.out.println(vid);
-            GreenfootImage vida =new GreenfootImage(vid, 10);
+            if(vitalidad>0){
+            GreenfootImage vida =new GreenfootImage(vitalidad, 10);
             vida.setColor(color);
             vida.fill();
             setImage(vida);
-            return false;}
+            return false;
+        }
             else
             return true;
     }

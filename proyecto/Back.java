@@ -12,19 +12,19 @@ public class Back extends Boton
      * Act - hace lo que Back quiere hacer. Este método se llama "cuando quiera" o whenever
      * los botones 'Actuar or 'Ejecutar' son presionados en el entorno.
      */
-    World w=getWorld();
+    World world=getWorld();
     public void act() 
     {
        if(Greenfoot.mouseClicked(this))
         {
-            w=new PantallaTitulo();
-            Greenfoot.setWorld(w);
+            world=new PantallaTitulo();
+            Greenfoot.setWorld(world);
         }
         if(Greenfoot.mouseMoved(this))
         {
             setImage("back.png");
         }
-        else if(Greenfoot.mouseMoved(w))
+        else if(Greenfoot.mouseMoved(world))
        {
             setImage("back.png");
        }

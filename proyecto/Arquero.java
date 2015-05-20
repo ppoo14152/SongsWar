@@ -12,21 +12,19 @@ import greenfoot.*;
  */
 public class Arquero extends Heroe
 {
-    private int Ataque;
-    private int DanoRes;
-    private int Def;
-    private int band;
-    private int band2;
-    private int i;
-    private int bandG;
-    private Vida v;
-
-    private long seg;
+    private int ataque;
+    private int danoRecibido;
+    private int defensa;
+    private int bandAtaque;
+    private int bandRegreso;
+    
+    private Vida vida;
+    private long segundo;
     private int CoorX;
     private int movimiento;
-    private boolean Desaparece;
-    private int band3;
-    private World w;
+    private boolean desaparece;
+    private int bandDano;
+    private World world;
     /**
      * Constructor de Arquero 
      * aqui se definen las varibles de instancia 
@@ -35,36 +33,34 @@ public class Arquero extends Heroe
 
     public Arquero()
     {
-        Ataque=20;
-        DanoRes=0;
-        Def=50;
-        band=0;
-        band2=0;
-        i=0;
-        bandG=0;
-        band3=0;
-
-        v=new Vida(300);
-        seg=System.currentTimeMillis();
+        ataque=20;
+        danoRecibido=0;
+        defensa=50;
+        bandAtaque=0;
+        bandRegreso=0;      
+        bandDano=0;
+        vida=new Vida(300);
+        segundo=System.currentTimeMillis();
     }
     public void act() 
     {
         // Agrega tus códigos de acción aquí.
-        w=getWorld();
+        world=getWorld();
 
-        band=super.setCom();
+        bandAtaque=super.setCom();
 
         if(super.getComando()==1){  
-            // band2=Ataque();
-            band3=0;}
+            // band2=ataque();
+            bandDano=0;
+        }
 
-        if(band2==1){
+        if(bandRegreso==1){
             setReg(true);
-            band2=0;}
+            bandRegreso=0;}
 
         if(super.getComando()==2){
-            band3=1;
-            Def();
+            bandDano=1;
+            defensa();
         }
         if(super.getComando()==3){
 
@@ -75,21 +71,19 @@ public class Arquero extends Heroe
             band3=0;}
         else
             band3=1;*/
-        if(this.isTouching(Enemigo.class) && band3!=1){
-            DanoRes=super.restaSalud(Def);
-            Desaparece=v.reduce(DanoRes,v.getImage(),1);
+        if(this.isTouching(Enemigo.class) && bandDano!=1){
+            danoRecibido=super.restaSalud(defensa);
+            desaparece=vida.reduce(danoRecibido,vida.getImage(),1);
             super.setDano(0);
-            //System.out.println(DanoRes);
+           
         }
-        if(Desaparece==false)
-            w.addObject(v,100,240);
+        if(desaparece==false)
+            world.addObject(vida,100,240);
         else
-        if(Desaparece==true)
-            System.out.println(bandG);
-        if(Desaparece==true){
-            w.removeObject(v);
+        if(desaparece==true){
+            world.removeObject(vida);
 
-            w.removeObject(this);
+            world.removeObject(this);
 
             
         }    
@@ -97,19 +91,19 @@ public class Arquero extends Heroe
     }
     /**
      * 
-     *@return Ataque regresa el ataque
+     *@return ataque regresa el ataque
      */
     public int getAtk()
     {
-        return Ataque;
+        return ataque;
     }
 
     /**
      * se coloca la defensa del arquero
      */
-    public void Def()
+    public void defensa()
     {
-        Def=50;
+        defensa=50;
     }
 
 }
