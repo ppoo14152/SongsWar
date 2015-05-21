@@ -63,6 +63,7 @@ public class Kraken extends Enemigo
         imgAtaque.add(krakenAtk3=new GreenfootImage("KrakenAtk03.png"));
         identificadorI=0;  
         identificadorJ=0;
+        bandAnimacion=false;
         num=0;
         segundo=System.currentTimeMillis();
         SonidoAtk= new GreenfootSound("golpear_7.mp3");
@@ -75,14 +76,18 @@ public class Kraken extends Enemigo
         
         heroeList=world.getObjects(Heroe.class);
         int bandRegreso=heroe.setCom();
+        
+            
         if(heroeList.isEmpty()){
             World gameO=new GameOver();
             Greenfoot.setWorld(gameO);
+        }
         if(segundo>1 && bandAnimacion==false){
             segundo=System.currentTimeMillis();
             setImage(imgReposo.get(identificadorI));
-            setLocation(680,500);
+           setLocation(680,500);
             identificadorI++;
+
 
             if(identificadorI==2)
                 identificadorI=0; }   
@@ -98,7 +103,7 @@ public class Kraken extends Enemigo
                 if(!this.isTouching(Heroe.class))
                     SonidoAtk.stop();
             }
-        }}
+        }
 
         num=Greenfoot.getRandomNumber(5);
         if(num==1){

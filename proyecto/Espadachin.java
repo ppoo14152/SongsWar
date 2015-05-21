@@ -57,7 +57,7 @@ public class Espadachin extends Heroe
         heroAtaque.add(ataque01=new GreenfootImage("Atack01.png"));
         heroAtaque.add( ataque02=new GreenfootImage("Atack02.png"));
         heroAtaque.add(ataque03=new GreenfootImage("Atack03.png"));
-        defensa01=new GreenfootImage("defensa01.png");
+        defensa01=new GreenfootImage("Def01.png");
         golpe=new GreenfootSound("golpe_A_Heroe.mp3");
         segundo=System.currentTimeMillis();
 
